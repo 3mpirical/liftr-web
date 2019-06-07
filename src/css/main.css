@@ -20,9 +20,25 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center; }
+  align-items: center;
+  height: 100vh;
+  width: 100vw; }
 
 .register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100vw; }
+
+.signin-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

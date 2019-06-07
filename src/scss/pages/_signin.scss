@@ -1,8 +1,8 @@
-.register {
+.signin {
     @include screen;
 }
 
-.register-form {
+.signin-form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
