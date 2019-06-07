@@ -15,3 +15,15 @@ body {
   font-size: 1.6rem;
   letter-spacing: 1.25px;
   font-family: "Lato", sans-serif; }
+
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
