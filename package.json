@@ -17,6 +17,7 @@
     "eject": "react-scripts eject",
     "sass-watch": "node-sass src/scss --output src/css -w -r"
   },
+  "proxy": "http://127.0.0.1:3005",
   "eslintConfig": {
     "extends": "react-app"
   },
