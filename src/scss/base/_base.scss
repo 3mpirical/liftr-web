@@ -12,8 +12,8 @@ html {
 
 body {
     box-sizing: border-box;
-    background-color: slategrey;
-    color: white;
+    background-color: $color-background;
+    color: $color-white;
     font-size: 1.6rem;
     letter-spacing: 1.25px;
     font-family: "Lato", sans-serif;

@@ -4,6 +4,10 @@
 
 ///// BASE /////
 @import "./base/base";
+@import "./base/global";
+
+///// LAYOUT /////
+@import "./layout/navbar";
 
 ///// PAGES /////
 @import "./pages/register";

@@ -10,11 +10,37 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: slategrey;
-  color: white;
+  background-color: #263238;
+  color: #CFD8DC;
   font-size: 1.6rem;
   letter-spacing: 1.25px;
   font-family: "Lato", sans-serif; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 5rem;
+  width: 100vw;
+  background-color: #11171a; }
+  .navbar__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .navbar__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .navbar__button {
+    border: none;
+    background-color: grey;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1.25px; }
 
 .register {
   display: flex;
@@ -31,15 +57,46 @@ body {
   align-items: center; }
 
 .signin {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100vh;
-  width: 100vw; }
+  width: 50%;
+  max-width: 100rem;
+  min-width: 50rem;
+  margin: 10rem auto 0 auto;
+  background-color: #455A64; }
+  .signin__heading {
+    background-color: #11171a;
+    text-align: center;
+    padding: 1.5rem 0; }
 
 .signin-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center; }
+  align-items: center;
+  width: 100%;
+  padding: 3rem 2rem 5rem 2rem; }
+  .signin-form input {
+    width: 100%;
+    padding: 3rem 0 1rem 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #11171a;
+    color: #CFD8DC;
+    font-size: 1.8rem;
+    letter-spacing: 1.25px; }
+    .signin-form input::placeholder {
+      color: #CFD8DC;
+      font-size: 1.8rem;
+      letter-spacing: 1.25px; }
+  .signin-form button {
+    border: none;
+    background-color: #11171a;
+    padding: 1.25rem 4rem;
+    margin-top: 5rem;
+    color: #CFD8DC;
+    font-family: "Lato", sans-serif;
+    font-size: 2.25rem;
+    letter-spacing: 1.25px;
+    cursor: pointer;
+    transition-duration: 0.3s; }
+    .signin-form button:hover {
+      background-color: #212b30; }

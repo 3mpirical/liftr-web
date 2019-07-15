@@ -17,6 +17,7 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className="signin">
+                <h1 className="signin__heading">Login</h1>
                 <form className="signin-form" onSubmit={this.handleSubmit} >
                     <input 
                         required
@@ -24,7 +25,7 @@ class SignIn extends React.Component {
                         name="email"
                         value={this.state.email}
                         onChange={this.handleChange}
-                        placeholder="email"
+                        placeholder="Email"
                     />
                     <input 
                         required
@@ -32,9 +33,9 @@ class SignIn extends React.Component {
                         name="password"
                         value={this.state.password}
                         onChange={this.handleChange}
-                        placeholder="password"
+                        placeholder="Password"
                     />
-                    <button>Sign In</button>
+                    <button>Confirm</button>
                 </form>
             </div>
         )

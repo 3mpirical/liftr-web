@@ -25,11 +25,11 @@ class AuthProvider extends React.Component {
         .catch(console.log)
     }
 
-    handleLogout = (user, history) => {
+    handleLogout = (history) => {
         axios.delete("/api/auth/sign_out")
         .then((res) => {
             this.setState({ user: null });
-            history.push("/login")
+            history.push("/sign_in")
         })
         .catch(console.log)
     }
@@ -59,4 +59,4 @@ const withAuth = (Component) => {
 }
 
 
-export { AuthProvider, withAuth };
+export { AuthProvider, withAuth, AuthContext };
