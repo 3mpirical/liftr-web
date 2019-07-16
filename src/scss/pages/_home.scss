@@ -1,0 +1,26 @@
+
+.home {
+    @include screen;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 5rem;
+    padding-left: 5rem;
+    background: url("../images/barbell-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    &__navigation {
+        width: 50rem;
+        height: calc(100% - 5rem);
+        min-height: 60rem;
+        background-color: $color-background-dark;
+    }
+
+    &__page-container {
+        width: calc(100% - 50rem);
+        display: flex;
+        justify-content: center;
+    }
+}

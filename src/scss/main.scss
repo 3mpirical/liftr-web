@@ -1,6 +1,7 @@
 ///// ABSTRACT /////
 @import "./abstract/variables";
-@import "./abstract//mixins";
+@import "./abstract/mixins";
+@import "./abstract/keyframes";
 
 ///// BASE /////
 @import "./base/base";
@@ -10,8 +11,7 @@
 @import "./layout/navbar";
 
 ///// PAGES /////
-@import "./pages/register";
-@import "./pages/signin";
+@import "./pages/home";
 
 ///// COMPONENTS /////
 @import "./components/auth-form";

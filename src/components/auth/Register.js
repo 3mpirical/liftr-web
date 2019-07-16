@@ -59,8 +59,11 @@ class Register extends React.Component {
                         placeholder="password confirmation"
                     />
                     <button>Sign Up</button>
-
-                    <Link className="auth-form__link" to="/sign_in">already have a login?</Link>
+                    <a 
+                        className="auth-form__link" 
+                        onClick={() => this.props.setPage("sign_up")}>
+                        already have a login?
+                    </a>
                 </form>
             </div>
         )

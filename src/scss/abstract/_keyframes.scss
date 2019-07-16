@@ -1,0 +1,11 @@
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(-5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

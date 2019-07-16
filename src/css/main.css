@@ -1,3 +1,11 @@
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(-5%);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
 *,
 *::before,
 *::after {
@@ -44,34 +52,30 @@ body {
     font-family: "Lato", sans-serif;
     font-size: 1.4rem;
     letter-spacing: 1.25px; }
+  .navbar__logo {
+    height: 3rem; }
 
-.register {
+.home {
   height: calc(100% - 5rem);
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background: url("../images/barbell-background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom; }
-
-.register-form {
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  align-items: center; }
-
-.signin {
-  height: calc(100% - 5rem);
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: flex-start;
+  padding-top: 5rem;
+  padding-left: 5rem;
   background: url("../images/barbell-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom; }
+  .home__navigation {
+    width: 50rem;
+    height: calc(100% - 5rem);
+    min-height: 60rem;
+    background-color: #11171a; }
+  .home__page-container {
+    width: calc(100% - 50rem);
+    display: flex;
+    justify-content: center; }
 
 .auth-form {
   display: flex;
@@ -81,8 +85,9 @@ body {
   width: 50%;
   max-width: 65rem;
   min-width: 50rem;
-  margin-top: 10rem;
-  background-color: #455A64; }
+  background-color: #455A64;
+  animation: slide-in-right linear;
+  animation-duration: 0.3s; }
   .auth-form__heading {
     width: 100%;
     background-color: #11171a;
@@ -121,7 +126,8 @@ body {
     padding: 0.5rem;
     margin-bottom: 2rem;
     color: #CFD8DC;
-    transition-duration: 0.1s; }
+    transition-duration: 0.1s;
+    cursor: pointer; }
     .auth-form__link:hover {
       color: #263238;
       background-color: #CFD8DC; }

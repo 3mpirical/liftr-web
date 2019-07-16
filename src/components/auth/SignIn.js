@@ -37,11 +37,11 @@ class SignIn extends React.Component {
                         placeholder="Password"
                     />
                     <button>Confirm</button>
-                    <Link 
+                    <a 
                         className="auth-form__link" 
-                        to="/register">
+                        onClick={() => this.props.setPage("register")}>
                         want to sign up?
-                    </Link>
+                    </a>
                 </form>
             </div>
         )
