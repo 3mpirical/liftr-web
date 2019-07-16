@@ -73,7 +73,7 @@ body {
   background-repeat: no-repeat;
   background-position: bottom; }
 
-.registration-form {
+.auth-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -83,14 +83,14 @@ body {
   min-width: 50rem;
   margin-top: 10rem;
   background-color: #455A64; }
-  .registration-form__heading {
+  .auth-form__heading {
     width: 100%;
     background-color: #11171a;
     text-align: center;
     padding: 1.5rem 0;
     margin-bottom: 3rem;
     letter-spacing: 1.75px; }
-  .registration-form input {
+  .auth-form input {
     width: 90%;
     padding: 3rem 0 1rem 1rem;
     background-color: transparent;
@@ -99,11 +99,11 @@ body {
     color: #CFD8DC;
     font-size: 1.8rem;
     letter-spacing: 1.25px; }
-    .registration-form input::placeholder {
+    .auth-form input::placeholder {
       color: #CFD8DC;
       font-size: 1.8rem;
       letter-spacing: 1.25px; }
-  .registration-form button {
+  .auth-form button {
     padding: 1.25rem 4rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
@@ -115,13 +115,13 @@ body {
     letter-spacing: 1.25px;
     cursor: pointer;
     transition-duration: 0.3s; }
-    .registration-form button:hover {
+    .auth-form button:hover {
       background-color: #212b30; }
-  .registration-form__link {
+  .auth-form__link {
     padding: 0.5rem;
     margin-bottom: 2rem;
     color: #CFD8DC;
     transition-duration: 0.1s; }
-    .registration-form__link:hover {
+    .auth-form__link:hover {
       color: #263238;
       background-color: #CFD8DC; }

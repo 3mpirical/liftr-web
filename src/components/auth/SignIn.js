@@ -18,8 +18,8 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className="signin">
-                <form className="registration-form" onSubmit={this.handleSubmit} >
-                    <h1 className="registration-form__heading">Login</h1>
+                <form className="auth-form" onSubmit={this.handleSubmit} >
+                    <h1 className="auth-form__heading">Login</h1>
                     <input 
                         required
                         type="email"
@@ -38,7 +38,7 @@ class SignIn extends React.Component {
                     />
                     <button>Confirm</button>
                     <Link 
-                        className="registration-form__link" 
+                        className="auth-form__link" 
                         to="/register">
                         want to sign up?
                     </Link>
