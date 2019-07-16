@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import DefaultRoute from "./components/DefaultRoute";
+import DefaultRoute from "./components/auth/DefaultRoute";
 import Home from "./components/home-pages/Home";
 import Navbar from "./components/layout/Navbar";
 
