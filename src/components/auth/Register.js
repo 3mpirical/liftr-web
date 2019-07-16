@@ -1,5 +1,6 @@
 import React from "react";
 import { withAuth } from "../../state/AuthContext";
+import { withModal } from "../../state/ModalContext";
 
 
 class Register extends React.Component {
@@ -13,8 +14,9 @@ class Register extends React.Component {
         const { name, email, password, passwordConfirmation } = this.state;
         event.preventDefault();
         if(password !== passwordConfirmation) {
-            alert("Passwords Do Not Match");
-            return null;
+            return this.props.openDefaultBlackModal(() =>(
+                <h2 style={{fontSize: "3rem"}}>Passwords Do Not Match</h2>   
+            ));
         } 
 
         this.props.handleRegister({name, email, password}, this.props.history);
@@ -69,4 +71,4 @@ class Register extends React.Component {
     }
 }
 
-export default withAuth(Register);
+export default withAuth(withModal(Register));

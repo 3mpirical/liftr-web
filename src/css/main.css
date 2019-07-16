@@ -191,3 +191,38 @@ body {
     .auth-form__link:hover {
       color: #263238;
       background-color: #CFD8DC; }
+
+.modal {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100000000; }
+  .modal__clickzone {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10rem;
+    height: 100%;
+    width: 100%; }
+  .modal__default-prompt {
+    position: relative;
+    background-color: #263238;
+    border-bottom: 3px solid #303F9F;
+    width: 60rem;
+    padding: 5rem 0;
+    text-align: center; }
+    .modal__default-prompt__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.75rem 1rem;
+      color: #CFD8DC;
+      border: none;
+      border-radius: 1000px;
+      background-color: #303F9F;
+      transition-duration: 0.1s;
+      cursor: pointer; }
+      .modal__default-prompt__close:hover {
+        background-color: #CFD8DC;
+        color: #303F9F; }
