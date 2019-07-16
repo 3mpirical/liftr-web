@@ -3,6 +3,12 @@ $color-background: #263238;
 $color-background-dark: darken(#263238, 10%);
 $color-background-light: #455A64;
 $color-white: #CFD8DC; 
+$color-primary: #303F9F;
+$color-primary-dark: darken($color-primary, 15%);
+$color-primary-light: lighten($color-primary, 15%);
+$color-secondary: #00838F;
+$color-secondary-dark: darken($color-secondary, 10%);
+$color-secondary-light: lighten($color-secondary, 10%);
 
 ///// FONTS /////
 $font-normal: "Jura";
