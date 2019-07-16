@@ -18,7 +18,7 @@ const Home = ({ match, history }) => {
     return (
         <div className="home">
             <div className="home__navigation">
-
+            
             </div>
             <div className="home__page-container">
                 { renderPage() }

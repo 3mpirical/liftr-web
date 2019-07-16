@@ -78,11 +78,16 @@ body {
   background-repeat: no-repeat;
   background-position: center; }
   .home__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50rem;
     height: calc(100% - 2.5rem);
     min-height: 60rem;
     background-color: #11171a;
-    opacity: 0.95; }
+    opacity: 0.95;
+    border-left: 1rem solid #303F9F;
+    border-radius: 2.5px; }
   .home__page-container {
     width: calc(100% - 50rem);
     display: flex;
@@ -111,7 +116,8 @@ body {
   animation-duration: 0.3s;
   opacity: 0.95;
   border-bottom: 5px solid #303F9F;
-  border-top: 5px solid #303F9F; }
+  border-top: 5px solid #303F9F;
+  border-radius: 2.5px; }
   .auth-form__heading {
     width: 100%;
     background-color: #11171a;

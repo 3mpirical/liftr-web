@@ -13,11 +13,16 @@
     background-position: center;
 
     &__navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 50rem;
         height: calc(100% - 2.5rem);
         min-height: 60rem;
         background-color: $color-background-dark;
         opacity: 0.95;
+        border-left: 1rem solid $color-primary;
+        border-radius: $border-radius;
     }
 
     &__page-container {
