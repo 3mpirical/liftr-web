@@ -29,7 +29,7 @@ class AuthProvider extends React.Component {
         axios.delete("/api/auth/sign_out")
         .then((res) => {
             this.setState({ user: null });
-            history.push("/sign_in")
+            history.push("/home/sign_in")
         })
         .catch(console.log)
     }
