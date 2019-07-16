@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import SignIn from "../auth/SignIn";
 import Register from "../auth/Register";
 
-const Home = ({ match }) => {
+const Home = ({ match, history }) => {
 
     const [page, setPage] = useState(() => match.params.page);
 
     const renderPage = () => {
         let pages = {
-            sign_in: <SignIn setPage={setPage} />,
+            sign_in: <SignIn setPage={setPage} history={history} />,
             register: <Register setPage={setPage} />,
         };
         if(pages[page]) return pages[page];

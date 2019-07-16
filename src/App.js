@@ -4,13 +4,14 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import DefaultRoute from "./components/auth/DefaultRoute";
 import Home from "./components/home-pages/Home";
 import Navbar from "./components/layout/Navbar";
+import ExerciseTracker from "./components/exercise-tracker/ExerciseTracker";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Switch>
-        {/* <ProtectedRoute exact path="/" component={SOMETHING} /> */}
+        <ProtectedRoute exact path="/" component={ExerciseTracker} />
         <Route exact path="/home/:page" component={Home} />
         <Route path="*" component={DefaultRoute} />
       </Switch>
