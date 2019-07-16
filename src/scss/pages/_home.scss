@@ -1,19 +1,20 @@
 
 .home {
     @include screen;
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 5rem;
-    padding-left: 5rem;
-    background: url("../images/barbell-background.jpg");
+    padding-top: 2.5rem;
+    padding-left: 2.5rem;
+    background: url("../images/valley.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
 
     &__navigation {
         width: 50rem;
-        height: calc(100% - 5rem);
+        height: calc(100% - 2.5rem);
         min-height: 60rem;
         background-color: $color-background-dark;
     }
@@ -22,5 +23,19 @@
         width: calc(100% - 50rem);
         display: flex;
         justify-content: center;
+    }
+
+    &__picture-credit {
+        position: absolute;
+        bottom: 2.5rem;
+        right: 2.5rem;
+        padding: 0.5rem 1rem;
+        color: $color-white;
+        text-decoration: none;
+        transition-duration: 0.1s;
+
+        &:hover {
+            background-color: $color-background-light;
+        }
     }
 }

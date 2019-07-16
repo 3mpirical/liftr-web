@@ -1,6 +1,5 @@
 import React from "react";
 import { withAuth } from "../../state/AuthContext";
-import { Link } from "react-router-dom";
 
 
 class Register extends React.Component {

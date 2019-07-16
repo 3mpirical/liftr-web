@@ -9,7 +9,7 @@ const Home = ({ match, history }) => {
     const renderPage = () => {
         let pages = {
             sign_in: <SignIn setPage={setPage} history={history} />,
-            register: <Register setPage={setPage} />,
+            register: <Register setPage={setPage} history={history} />,
         };
         if(pages[page]) return pages[page];
         else return pages["sign_in"];
@@ -23,6 +23,11 @@ const Home = ({ match, history }) => {
             <div className="home__page-container">
                 { renderPage() }
             </div>
+            <a 
+                className="home__picture-credit" 
+                href="https://unsplash.com/@juliacaesar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank"
+            > photo by julia ceaser </a>
         </div>
     )
 }

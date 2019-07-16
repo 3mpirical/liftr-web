@@ -53,29 +53,41 @@ body {
     font-size: 1.4rem;
     letter-spacing: 1.25px; }
   .navbar__logo {
-    height: 3rem; }
+    height: 2.5rem; }
 
 .home {
   height: calc(100% - 5rem);
   width: 100%;
+  overflow-y: auto;
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 5rem;
-  padding-left: 5rem;
-  background: url("../images/barbell-background.jpg");
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+  background: url("../images/valley.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom; }
+  background-position: center; }
   .home__navigation {
     width: 50rem;
-    height: calc(100% - 5rem);
+    height: calc(100% - 2.5rem);
     min-height: 60rem;
     background-color: #11171a; }
   .home__page-container {
     width: calc(100% - 50rem);
     display: flex;
     justify-content: center; }
+  .home__picture-credit {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    padding: 0.5rem 1rem;
+    color: #CFD8DC;
+    text-decoration: none;
+    transition-duration: 0.1s; }
+    .home__picture-credit:hover {
+      background-color: #455A64; }
 
 .auth-form {
   display: flex;
