@@ -1,5 +1,12 @@
 .register {
     @include screen;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: url("../images/barbell-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 .register-form {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; 
 import { withAuth } from "../../state/AuthContext";
 
 
@@ -17,8 +18,8 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className="signin">
-                <form className="signin-form" onSubmit={this.handleSubmit} >
-                    <h1 className="signin-form__heading">Login</h1>
+                <form className="registration-form" onSubmit={this.handleSubmit} >
+                    <h1 className="registration-form__heading">Login</h1>
                     <input 
                         required
                         type="email"
@@ -36,6 +37,11 @@ class SignIn extends React.Component {
                         placeholder="Password"
                     />
                     <button>Confirm</button>
+                    <Link 
+                        className="registration-form__link" 
+                        to="/register">
+                        want to sign up?
+                    </Link>
                 </form>
             </div>
         )

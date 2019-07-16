@@ -1,5 +1,6 @@
 import React from "react";
 import { withAuth } from "../../state/AuthContext";
+import { Link } from "react-router-dom";
 
 
 class Register extends React.Component {
@@ -23,7 +24,8 @@ class Register extends React.Component {
     render() {
         return (
             <div className="register">
-                <form className="register-form" onSubmit={this.handleSubmit} >
+                <form className="registration-form" onSubmit={this.handleSubmit} >
+                    <h1 className="registration-form__heading">Register</h1>
                     <input 
                         required
                         type="text"
@@ -57,6 +59,8 @@ class Register extends React.Component {
                         placeholder="password confirmation"
                     />
                     <button>Sign Up</button>
+
+                    <Link className="registration-form__link" to="/sign_in">already have a login?</Link>
                 </form>
             </div>
         )
