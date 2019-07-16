@@ -19,6 +19,9 @@ const Home = ({ match, history }) => {
     return (
         <div className="home">
             <div className="home__navigation">
+                <div className="home__logo-container">
+                    <h2 className="home__logo" >Liftr</h2>
+                </div>
                 <HomeButton 
                     text="Sign In" 
                     setPage={setPage} 
