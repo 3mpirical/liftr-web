@@ -60,7 +60,7 @@ class Register extends React.Component {
                     <button>Sign Up</button>
                     <a 
                         className="auth-form__link" 
-                        onClick={() => this.props.setPage("sign_up")}>
+                        onClick={() => this.props.setPage("sign_in")}>
                         already have a login?
                     </a>
                 </form>

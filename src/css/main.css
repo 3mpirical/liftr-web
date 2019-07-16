@@ -105,8 +105,6 @@ body {
     width: 100%;
     padding: 4rem;
     border: none;
-    border-bottom: 2px solid transparent;
-    border-top: 2px solid transparent;
     background-color: transparent;
     color: #CFD8DC;
     font-family: "Jura";
@@ -116,7 +114,6 @@ body {
     cursor: pointer;
     transition-duration: 0.2s; }
     .home__button:hover {
-      border-color: #1e2864;
       background-color: rgba(69, 90, 100, 0.5); }
 
 .auth-form {

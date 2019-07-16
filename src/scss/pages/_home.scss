@@ -48,8 +48,6 @@
         width: 100%;
         padding: 4rem;
         border: none;
-        border-bottom: 2px solid transparent;
-        border-top: 2px solid transparent;
         background-color: transparent;
         color: $color-white;
         font-family: $font-normal;
@@ -60,7 +58,6 @@
         transition-duration: 0.2s;
         
         &:hover {
-            border-color: $color-primary-dark;
             background-color: rgba($color-background-light, 0.5);
         }
     }

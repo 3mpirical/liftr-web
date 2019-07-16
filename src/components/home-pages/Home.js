@@ -19,10 +19,30 @@ const Home = ({ match, history }) => {
     return (
         <div className="home">
             <div className="home__navigation">
-                <HomeButton text="Sign In" />
-                <HomeButton text="Register" />
-                <HomeButton text="About Us" />
-                <HomeButton text="Contact" />
+                <HomeButton 
+                    text="Sign In" 
+                    setPage={setPage} 
+                    selectedPage={page} 
+                    buttonPage="sign_in" 
+                />
+                <HomeButton 
+                    text="Register" 
+                    setPage={setPage} 
+                    selectedPage={page} 
+                    buttonPage="register" 
+                />
+                <HomeButton 
+                    text="About Us" 
+                    setPage={setPage} 
+                    selectedPage={page} 
+                    buttonPage="about_us" 
+                />
+                <HomeButton 
+                    text="Contact" 
+                    setPage={setPage} 
+                    selectedPage={page} 
+                    buttonPage="contact" 
+                />
             </div>
             <div className="home__page-container">
                 { renderPage() }
