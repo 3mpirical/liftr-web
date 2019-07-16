@@ -71,27 +71,26 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 2.5rem;
-  padding-left: 2.5rem;
   background: url("../images/valley.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
   .home__navigation {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50rem;
-    height: calc(100% - 2.5rem);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 22.5rem;
+    height: 100%;
     min-height: 60rem;
     background-color: #11171a;
     opacity: 0.95;
-    border-left: 1rem solid #303F9F;
-    border-radius: 2.5px; }
+    border-right: 1rem solid #303F9F; }
   .home__page-container {
-    width: calc(100% - 50rem);
+    width: calc(100% - 25rem);
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    padding-top: 2.5rem; }
   .home__picture-credit {
     position: absolute;
     bottom: 2.5rem;
@@ -102,6 +101,23 @@ body {
     transition-duration: 0.1s; }
     .home__picture-credit:hover {
       background-color: #455A64; }
+  .home__button {
+    width: 100%;
+    padding: 4rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+    background-color: transparent;
+    color: #CFD8DC;
+    font-family: "Jura";
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.2s; }
+    .home__button:hover {
+      border-color: #1e2864;
+      background-color: rgba(69, 90, 100, 0.5); }
 
 .auth-form {
   display: flex;

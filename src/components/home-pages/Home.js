@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SignIn from "../auth/SignIn";
 import Register from "../auth/Register";
+import HomeButton from "./HomeButton";
 
 const Home = ({ match, history }) => {
 
@@ -18,7 +19,10 @@ const Home = ({ match, history }) => {
     return (
         <div className="home">
             <div className="home__navigation">
-            
+                <HomeButton text="Sign In" />
+                <HomeButton text="Register" />
+                <HomeButton text="About Us" />
+                <HomeButton text="Contact" />
             </div>
             <div className="home__page-container">
                 { renderPage() }

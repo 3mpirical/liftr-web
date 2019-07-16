@@ -5,8 +5,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 2.5rem;
-    padding-left: 2.5rem;
     background: url("../images/valley.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,21 +12,22 @@
 
     &__navigation {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50rem;
-        height: calc(100% - 2.5rem);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 22.5rem;
+        height: 100%;
         min-height: 60rem;
         background-color: $color-background-dark;
         opacity: 0.95;
-        border-left: 1rem solid $color-primary;
-        border-radius: $border-radius;
+        border-right: 1rem solid $color-primary;
     }
 
     &__page-container {
-        width: calc(100% - 50rem);
+        width: calc(100% - 25rem);
         display: flex;
         justify-content: center;
+        padding-top: 2.5rem;
     }
 
     &__picture-credit {
@@ -42,6 +41,27 @@
 
         &:hover {
             background-color: $color-background-light;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        padding: 4rem;
+        border: none;
+        border-bottom: 2px solid transparent;
+        border-top: 2px solid transparent;
+        background-color: transparent;
+        color: $color-white;
+        font-family: $font-normal;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+        text-align: center;
+        cursor: pointer;
+        transition-duration: 0.2s;
+        
+        &:hover {
+            border-color: $color-primary-dark;
+            background-color: rgba($color-background-light, 0.5);
         }
     }
 }
