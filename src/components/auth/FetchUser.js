@@ -1,10 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-import { Redirect } from "react-router-dom";
 import { AuthContext } from '../../state/AuthContext';
 
 
-const FetchUser = ({ children, history }) => {
+const FetchUser = ({ children }) => {
     const [loaded, setLoaded] = useState(false);
     const { authenticated, setUser } = useContext(AuthContext);
 
