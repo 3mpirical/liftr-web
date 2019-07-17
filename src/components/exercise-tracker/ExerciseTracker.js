@@ -1,20 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
+import { AuthContext } from "../../state/AuthContext";
 
 
 const ExerciseTracker = ({  }) => {
+    const { user } = useContext(AuthContext);
+    const [trainingDates, setTrainingDates] = useState([]);
+
+    useEffect(() => {
+        axios.get(`/api/users/${user.id}/training_dates`)
+        .then((res) => setTrainingDates(res.data))
+        .catch(console.log)
+    }, []);
+
+    const renderDates = () => {
+        return trainingDates.map((trainingDate) => (
+            <p key={trainingDate.id} >{ trainingDate.date }</p>
+        ))
+    }
+
+
     return (
         <main className="tracker">
-            <h1 style={{textAlign: "center"}} >Tracker Goes Here</h1>
-            <h2 style={{textAlign: "center"}} >Tracker Goes Here</h2>
-            <h3 style={{textAlign: "center"}} >Tracker Goes Here</h3>
-            <h4 style={{textAlign: "center"}} >Tracker Goes Here</h4>
-            <h5 style={{textAlign: "center"}} >Tracker Goes Here</h5>
-            <h6 style={{textAlign: "center"}} >Tracker Goes Here</h6>
-            <input type="text" placeholder="placeholder" />
-            <br/>
-            <button>button</button>
-            <br/>
-            <a href="lsdjflksjd">anchor tag</a>
+            { trainingDates && renderDates() }
         </main>
     )
 }

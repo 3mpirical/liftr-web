@@ -171,6 +171,11 @@ a {
       padding: 1rem 0;
       text-align: center; }
 
+.tracker {
+  height: calc(100% - 4rem);
+  width: 100%;
+  overflow-y: auto; }
+
 .auth-form {
   display: flex;
   flex-direction: column;
