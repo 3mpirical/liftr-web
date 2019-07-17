@@ -8,14 +8,7 @@ const Navbar = ({ history }) => {
     return (
         <nav className="navbar">
             <div className="navbar__left">
-                { auth.authenticated 
-                  ? <img 
-                    src={require("../../images/liftr-logo.svg")} 
-                    alt="liftr logo" 
-                    className="navbar__logo"
-                    />
-                  : null 
-                }
+                { auth.authenticated && <p className="navbar__logo">Liftr</p> }
             </div>
 
             <div className="navbar__right">

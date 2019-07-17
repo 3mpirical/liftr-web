@@ -37,6 +37,7 @@ body {
   width: 100vw; }
 
 .navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +62,12 @@ body {
     font-size: 1.4rem;
     letter-spacing: 1.25px; }
   .navbar__logo {
-    height: 2.5rem; }
+    position: absolute;
+    left: calc(50% - 3rem);
+    opacity: 0.25;
+    color: #5161ca;
+    font-family: "Audiowide";
+    letter-spacing: 2px; }
 
 .home {
   height: calc(100% - 4rem);
