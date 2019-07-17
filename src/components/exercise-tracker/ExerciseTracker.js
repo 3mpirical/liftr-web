@@ -23,7 +23,7 @@ const ExerciseTracker = ({  }) => {
             axios.get(`/api/training_dates/${currentDate.id}/rep_schemes`)
             .then((res) => { 
                 setRepSchemes(res.data);
-                setSelected("tracker");
+                setSelected("exercises");
             })
             .catch(console.log);
         }
@@ -44,7 +44,7 @@ const ExerciseTracker = ({  }) => {
                 setSelected={setSelected}
             />
             <div className="tracker__page-container">
-                { selected === "tracker" && renderRepScemes() }
+                { selected === "exercises" && renderRepScemes() }
             </div>
         </main>
     )
