@@ -12,7 +12,8 @@
 
 ///// PAGES /////
 @import "./pages/home";
-@import "./pages/exercise-tracker";
+@import "./pages/exercise-tracker/exercise-tracker";
+@import "./pages/exercise-tracker/tracker-nav";
 
 ///// COMPONENTS /////
 @import "./components/auth-form";

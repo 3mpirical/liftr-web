@@ -19,7 +19,7 @@ class Register extends React.Component {
         event.preventDefault();
         if(password !== passwordConfirmation) {
             return this.props.openDefaultBlackModal(() =>(
-                <h2 style={{fontSize: "3rem"}}>Passwords Do Not Match</h2>   
+                <p style={{fontSize: "3rem"}}>Passwords Do Not Match</p>   
             ));
         } 
 

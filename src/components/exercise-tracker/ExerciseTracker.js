@@ -2,11 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import moment from "moment";
 import axios from "axios";
 import { AuthContext } from "../../state/AuthContext";
+import TrackerNav from "./TrackerNav";
 import RepScheme from "./RepScheme";
 
 
 const ExerciseTracker = ({  }) => {
     const { user } = useContext(AuthContext);
+    const [selected, setSelected] = useState(null);
     const [currentDate, setCurrentDate] = useState(null);
     const [repSchemes, setRepSchemes] = useState([]);
 
@@ -19,7 +21,10 @@ const ExerciseTracker = ({  }) => {
     useEffect(() => {
         if(currentDate) {
             axios.get(`/api/training_dates/${currentDate.id}/rep_schemes`)
-            .then((res) => setRepSchemes(res.data))
+            .then((res) => { 
+                setRepSchemes(res.data);
+                setSelected("tracker");
+            })
             .catch(console.log);
         }
     }, [currentDate]);
@@ -32,8 +37,15 @@ const ExerciseTracker = ({  }) => {
 
     return (
         <main className="tracker">
-            { currentDate && <><h1>{ currentDate.date }</h1><br/><hr /></> }
-            { repSchemes && renderRepScemes() }
+            <TrackerNav 
+                currentDate={currentDate} 
+                setCurrentDate={setCurrentDate} 
+                selected={selected}
+                setSelected={setSelected}
+            />
+            <div className="tracker__page-container">
+                { selected === "tracker" && renderRepScemes() }
+            </div>
         </main>
     )
 }

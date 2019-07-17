@@ -191,6 +191,33 @@ a {
   width: 100%;
   overflow-y: auto; }
 
+.tracker-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  padding: 0 2rem;
+  border-top: 1px solid #263238;
+  background-color: #11171a; }
+  .tracker-nav__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .tracker-nav__left button {
+      margin-right: 1.5rem; }
+  .tracker-nav__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .tracker-nav__date {
+    margin-right: 1rem;
+    letter-spacing: 2px;
+    background-color: transparent; }
+    .tracker-nav__date:hover {
+      background-color: #CFD8DC;
+      color: #11171a; }
+
 .auth-form {
   display: flex;
   flex-direction: column;

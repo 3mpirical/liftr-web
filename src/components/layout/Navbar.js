@@ -24,10 +24,12 @@ const Navbar = ({ history }) => {
                 }
             </div>
             
-            {/* { auth.authenticated && <p className="navbar__logo">Liftr</p> } */}
             <p className="navbar__logo">Liftr</p>
 
             <div className="navbar__right">
+                <button className="navbar__button">
+                    Tracker
+                </button>
                 <button className="navbar__button">
                     Boards
                 </button>
