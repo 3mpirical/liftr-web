@@ -1,0 +1,72 @@
+
+h1,h2,h3,
+h4,h5,h6 {
+    font-family: $font-display;
+}
+
+h1 {
+    letter-spacing: 4px;
+}
+
+h2 {
+    letter-spacing: 2.5px;
+}
+
+h3 {
+    letter-spacing: 2px;
+}
+
+input {
+    padding: 2rem 1rem 1rem 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $color-primary;
+    color: $color-white;
+    font-family: $font-normal, sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1.25px;
+    outline: none;
+
+    &::placeholder {
+        color: $color-white;
+        font-size: 1.8rem;
+        letter-spacing: 1.25px;
+    }
+
+    &:focus {
+        background-color: $color-background-light;
+    }
+
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: $color-background;
+    color: $color-white;
+    font-family: $font-normal;
+    font-size: 1.6rem;
+    letter-spacing: 1.25px;
+    border-radius: $border-radius;
+    transition-duration: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-background-light;
+    }
+
+    &:active {
+        background-color: lighten($color-background-light, 20%);
+    }
+}
+
+a {
+    color: $color-white;
+    transition-duration: 0.2s;
+    cursor: pointer;
+
+    &:hover { 
+        color: $color-background;
+        background-color: $color-white;
+    }
+}

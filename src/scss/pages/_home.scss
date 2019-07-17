@@ -35,28 +35,16 @@
         bottom: 2.5rem;
         right: 2.5rem;
         padding: 0.5rem 1rem;
-        color: $color-white;
         text-decoration: none;
-        transition-duration: 0.1s;
-
-        &:hover {
-            background-color: $color-background-light;
-        }
     }
 
     &__button {
         width: 100%;
         padding: 4rem;
-        border: none;
         background-color: transparent;
-        color: $color-white;
-        font-family: $font-normal;
         font-size: 2.5rem;
         letter-spacing: 2px;
-        text-align: center;
         outline: none;
-        cursor: pointer;
-        transition-duration: 0.2s;
         
         &:hover {
             background-color: rgba($color-background-light, 0.5);
@@ -67,7 +55,6 @@
         display: inline-block;
         width: calc(100% - 2rem);
         padding: 1rem 0;
-        font-family: $font-display;
         font-size: 4rem;
         letter-spacing: 4px;
         color: $color-primary;

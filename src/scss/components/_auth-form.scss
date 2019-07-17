@@ -20,45 +20,24 @@
         text-align: center;
         margin: 3rem 0 3rem 0;
         letter-spacing: 4px;
-        font-family: $font-display, serif;
         font-size: 4rem;
     }
     
     input {
         width: 90%;
         padding: 3rem 0 1rem 1rem;
-        background-color: transparent;
-        border: none;
-        border-bottom: 2px solid $color-primary;
-        color: $color-white;
-        font-family: $font-normal, sans-serif;
-        font-size: 1.8rem;
-        letter-spacing: 1.25px;
-        outline: none;
-
-        &::placeholder {
-            color: $color-white;
-            font-size: 1.8rem;
-            letter-spacing: 1.25px;
-        }
 
         &:focus {
             background-color: $color-background;
         }
-
     }
 
     button {
         padding: 1.25rem 4rem;
         margin-top: 5rem;
         margin-bottom: 5rem;
-        border: none;
         background-color: $color-secondary;
-        color: $color-white;
-        font-family: $font-normal, sans-serif;
         font-size: 2.25rem;
-        letter-spacing: 1.25px;
-        cursor: pointer;
         transition-duration: 0.3s;
 
         &:hover {
@@ -69,13 +48,5 @@
     &__link {
         padding: 0.5rem;
         margin-bottom: 3rem;
-        color: $color-white;
-        transition-duration: 0.1s;
-        cursor: pointer;
-
-        &:hover { 
-            color: $color-background;
-            background-color: $color-white;
-        }
     }
 }
