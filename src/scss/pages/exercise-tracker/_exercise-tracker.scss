@@ -2,4 +2,8 @@
 .tracker {
     @include screen;
     
+    &__page-container {
+        height: calc(100% - 4rem);
+        width: 100%;
+    }
 }

@@ -3,7 +3,7 @@ import moment from "moment";
 import axios from "axios";
 import { AuthContext } from "../../state/AuthContext";
 import TrackerNav from "./TrackerNav";
-import RepScheme from "./RepScheme";
+import ExercisesPage from "./ExercisesPage";
 
 
 const ExerciseTracker = ({  }) => {
@@ -29,12 +29,6 @@ const ExerciseTracker = ({  }) => {
         }
     }, [currentDate]);
 
-    const renderRepScemes = () => (
-        repSchemes.map((repScheme) => (
-            <RepScheme key={repScheme.id} repScheme={repScheme} />
-        ))
-    );
-
     return (
         <main className="tracker">
             <TrackerNav 
@@ -44,7 +38,7 @@ const ExerciseTracker = ({  }) => {
                 setSelected={setSelected}
             />
             <div className="tracker__page-container">
-                { selected === "exercises" && renderRepScemes() }
+                { selected === "exercises" && <ExercisesPage repSchemes={repSchemes} /> }
             </div>
         </main>
     )
