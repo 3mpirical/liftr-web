@@ -8,10 +8,6 @@ const Navbar = ({ history }) => {
     return (
         <nav className="navbar">
             <div className="navbar__left">
-                { auth.authenticated && <p className="navbar__logo">Liftr</p> }
-            </div>
-
-            <div className="navbar__right">
                 { auth.authenticated 
                 ? <button 
                     className="navbar__button" 
@@ -20,6 +16,27 @@ const Navbar = ({ history }) => {
                   </button>
                 : null 
                 }
+                { auth.authenticated 
+                ? <button className="navbar__button" >
+                    Settings
+                  </button>
+                : null 
+                }
+            </div>
+            
+            {/* { auth.authenticated && <p className="navbar__logo">Liftr</p> } */}
+            <p className="navbar__logo">Liftr</p>
+
+            <div className="navbar__right">
+                <button className="navbar__button">
+                    Boards
+                </button>
+                <button className="navbar__button">
+                    Messages
+                </button>
+                <button className="navbar__button">
+                    Challenges
+                </button>
             </div>
         </nav>
     )

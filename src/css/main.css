@@ -107,9 +107,24 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between; }
+  .navbar__button {
+    border-radius: 0;
+    border-left: 1px solid #CFD8DC;
+    padding: 0.1rem 1rem;
+    background-color: transparent;
+    font-size: 1.4rem;
+    outline: none; }
+    .navbar__button:hover {
+      background-color: rgba(255, 255, 255, 0.1); }
+    .navbar__button:active {
+      background-color: #CFD8DC;
+      color: #11171a; }
+    .navbar__button:first-of-type {
+      border-left: none; }
   .navbar__logo {
     position: absolute;
-    left: calc(50% - 3rem);
+    left: calc(50%);
+    transform: translateX(-50%);
     opacity: 0.15;
     color: #CFD8DC;
     font-family: "Audiowide";
