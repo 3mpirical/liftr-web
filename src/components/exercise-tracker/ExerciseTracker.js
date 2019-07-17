@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import moment from "moment";
 import axios from "axios";
 import { AuthContext } from "../../state/AuthContext";
+import RepScheme from "./RepScheme";
 
 
 const ExerciseTracker = ({  }) => {
@@ -24,12 +25,8 @@ const ExerciseTracker = ({  }) => {
     }, [currentDate]);
 
     const renderRepScemes = () => (
-        repSchemes.map(({ comment, exercise_name, id }) => (
-            <div className="rep-scheme" key={id} >
-                <h3>{ exercise_name }</h3>
-                <p>{ comment }</p>
-                <hr/>
-            </div>
+        repSchemes.map((repScheme) => (
+            <RepScheme key={repScheme.id} repScheme={repScheme} />
         ))
     );
 
