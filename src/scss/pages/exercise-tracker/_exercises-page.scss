@@ -2,6 +2,15 @@
     display: flex;
     height: 100%;
     width: 100%;
+
+    &__rep-schemes-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 2rem 2rem 0 2rem;
+        overflow-y: auto;
+    }
 }
 
 .exercise-search {
@@ -9,10 +18,18 @@
     height: 100%;
     border-top: 1px solid $color-background;
     background-color: $color-background-dark;
+
+    &__search-input {
+        width: 100%;
+        background-color: $color-background-light;
+    }
 }
 
-.__rep-schemes-container {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto;
+.rep-scheme {
+    margin: 2rem;
+    padding: 1rem;
+    border: 1px solid $color-white;
+    border-radius: $border-radius;
+    background-color: $color-background-dark;
 }
+
