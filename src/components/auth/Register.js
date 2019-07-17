@@ -6,6 +6,10 @@ import { withModal } from "../../state/ModalContext";
 class Register extends React.Component {
     state = {name: "", email: "", password: "", passwordConfirmation: ""}
 
+    componentDidMount() {
+        document.querySelector(".auth-form__first-input").focus();
+    };
+
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     }
@@ -28,6 +32,7 @@ class Register extends React.Component {
                 <form className="auth-form" onSubmit={this.handleSubmit} >
                     <h1 className="auth-form__heading">Register</h1>
                     <input 
+                        className="auth-form__first-input" 
                         required
                         type="text"
                         name="name"

@@ -41,7 +41,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  height: 5rem;
+  height: 4rem;
   width: 100vw;
   background-color: #11171a; }
   .navbar__left {
@@ -64,7 +64,7 @@ body {
     height: 2.5rem; }
 
 .home {
-  height: calc(100% - 5rem);
+  height: calc(100% - 4rem);
   width: 100%;
   overflow-y: auto;
   position: relative;
@@ -138,7 +138,7 @@ body {
   width: 50%;
   max-width: 65rem;
   min-width: 50rem;
-  background-color: #455A64;
+  background-color: #11171a;
   animation: slide-in-right-opacity linear;
   animation-duration: 0.3s;
   opacity: 0.95;
@@ -147,11 +147,9 @@ body {
   border-radius: 2.5px; }
   .auth-form__heading {
     width: 100%;
-    background-color: #11171a;
     text-align: center;
-    padding: 1.5rem 0;
-    margin-bottom: 3rem;
-    letter-spacing: 3.5px;
+    margin: 3rem 0 3rem 0;
+    letter-spacing: 4px;
     font-family: "Audiowide", serif;
     font-size: 4rem; }
   .auth-form input {
@@ -159,15 +157,18 @@ body {
     padding: 3rem 0 1rem 1rem;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid #11171a;
+    border-bottom: 2px solid #303F9F;
     color: #CFD8DC;
     font-family: "Jura", sans-serif;
     font-size: 1.8rem;
-    letter-spacing: 1.25px; }
+    letter-spacing: 1.25px;
+    outline: none; }
     .auth-form input::placeholder {
       color: #CFD8DC;
       font-size: 1.8rem;
       letter-spacing: 1.25px; }
+    .auth-form input:focus {
+      background-color: #263238; }
   .auth-form button {
     padding: 1.25rem 4rem;
     margin-top: 5rem;
@@ -184,7 +185,7 @@ body {
       background-color: #212b30; }
   .auth-form__link {
     padding: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: #CFD8DC;
     transition-duration: 0.1s;
     cursor: pointer; }
@@ -209,6 +210,7 @@ body {
     position: relative;
     background-color: #263238;
     border-bottom: 3px solid #303F9F;
+    border-radius: 2.5px;
     width: 60rem;
     padding: 5rem 0;
     text-align: center; }

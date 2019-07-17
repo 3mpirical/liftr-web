@@ -7,7 +7,7 @@
     width: 50%;
     max-width: 65rem;
     min-width: 50rem;
-    background-color: $color-background-light;
+    background-color: $color-background-dark;
     animation: slide-in-right-opacity linear;
     animation-duration: 0.3s;
     opacity: 0.95;
@@ -17,11 +17,9 @@
     
     &__heading {
         width: 100%;
-        background-color: $color-background-dark;
         text-align: center;
-        padding: 1.5rem 0;
-        margin-bottom: 3rem;
-        letter-spacing: 3.5px;
+        margin: 3rem 0 3rem 0;
+        letter-spacing: 4px;
         font-family: $font-display, serif;
         font-size: 4rem;
     }
@@ -31,16 +29,21 @@
         padding: 3rem 0 1rem 1rem;
         background-color: transparent;
         border: none;
-        border-bottom: 2px solid $color-background-dark;
+        border-bottom: 2px solid $color-primary;
         color: $color-white;
         font-family: $font-normal, sans-serif;
         font-size: 1.8rem;
         letter-spacing: 1.25px;
+        outline: none;
 
         &::placeholder {
             color: $color-white;
             font-size: 1.8rem;
             letter-spacing: 1.25px;
+        }
+
+        &:focus {
+            background-color: $color-background;
         }
 
     }
@@ -65,7 +68,7 @@
 
     &__link {
         padding: 0.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         color: $color-white;
         transition-duration: 0.1s;
         cursor: pointer;

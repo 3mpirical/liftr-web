@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
 import { withAuth } from "../../state/AuthContext";
 
 
 class SignIn extends React.Component {
     state = { email: "", password: ""}
+
+    componentDidMount() {
+        document.querySelector(".auth-form__first-input").focus();
+    };
 
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
@@ -20,7 +23,8 @@ class SignIn extends React.Component {
             <div className="signin">
                 <form className="auth-form" onSubmit={this.handleSubmit} >
                     <h1 className="auth-form__heading">Login</h1>
-                    <input 
+                    <input
+                        className="auth-form__first-input" 
                         required
                         type="email"
                         name="email"
