@@ -1,18 +1,10 @@
 import React, { useState } from "react";
-import moment from "moment";
 import DatePicker from "react-datepicker";
+import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-const TrackerNav = ({ currentDate, setCurrentDate, selected, setSelected }) => {
-
-    const handleDateChange = (datePicked) => {
-        let newDate = {... currentDate};
-        newDate.date = moment(datePicked).format("MM-DD-YY");
-        console.log(newDate)
-        setCurrentDate(newDate)
-    }
-
+const TrackerNav = ({ currentDate, changeCurrentDate, selected, setSelected }) => {
 
     return (
         <div className="tracker-nav">
@@ -39,8 +31,8 @@ const TrackerNav = ({ currentDate, setCurrentDate, selected, setSelected }) => {
                 { currentDate &&
                     <DatePicker 
                         className="tracker-nav__date"
-                        selected={new Date(currentDate.date)}
-                        onChange={handleDateChange}
+                        selected={new Date(currentDate.date + " 00:00")}
+                        onChange={changeCurrentDate}
                         dateFormat="MM-dd-yy"
                     /> 
                 }
