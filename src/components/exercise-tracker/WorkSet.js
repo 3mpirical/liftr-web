@@ -59,6 +59,7 @@ const WorkSet = ({ workSet, repScheme ,updateWeight, updateReps }) =>{
                 value={weight !== null? weight : ""}
                 name="weight"
                 onChange={handleWeightChange}
+                placeholder="weight"
             /> 
             <p>X</p>
             <input 
@@ -67,6 +68,7 @@ const WorkSet = ({ workSet, repScheme ,updateWeight, updateReps }) =>{
                 value={reps !== null? reps : "" }
                 name="reps"
                 onChange={handleRepsChange}
+                placeholder="reps"
             /> 
             <button className="rep-scheme__rpe" >RPE</button>
         </div>

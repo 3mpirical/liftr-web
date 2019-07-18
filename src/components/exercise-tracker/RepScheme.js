@@ -32,6 +32,19 @@ const RepScheme = ({ repScheme, deleteRepScheme }) => {
         setWorkSets(newWorkSets);
     }
 
+    const createWorkSet = () => {
+        // We're using the last work set as a template
+        const lastWorkSet = workSets[workSets.length - 1]
+        axios.post(
+            `/api/rep_schemes/${repScheme.id}/work_sets`, 
+            { 
+                weight: lastWorkSet? lastWorkSet.weight : 0, 
+                reps: lastWorkSet? lastWorkSet.reps : 0, 
+            }
+        ).then((res) => setWorkSets([...workSets, res.data]))
+        .catch(console.log);
+    }
+
     const renderWorkSets = () => {
         return workSets.map((workSet) => (
             <WorkSet 
@@ -63,7 +76,10 @@ const RepScheme = ({ repScheme, deleteRepScheme }) => {
         <div className="rep-scheme__sets">
             { workSets && renderWorkSets() }
         </div>
-        <button className="rep-scheme__add-set">+ Add Set</button>
+        <button 
+            className="rep-scheme__add-set"
+            onClick={() => createWorkSet()}
+        >+ Add Set</button>
     </div>
     )
 };
