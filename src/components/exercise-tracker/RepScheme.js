@@ -16,8 +16,10 @@ const RepScheme = ({ repScheme }) => {
     const renderWorkSets = () => {
         return workSets.map(({ reps, weight, rpe, id }) => (
             <div className="rep-scheme__work-set" key={id}>
-                reps: { reps } | weight: { weight } | RPE { rpe }
-                <hr/>
+                <p>{ weight }</p> 
+                <p>X</p>
+                <p>{ reps }</p>
+                <button className="rep-scheme__rpe" >RPE</button>
             </div>
         ))
     }
@@ -25,10 +27,18 @@ const RepScheme = ({ repScheme }) => {
 
     return (
     <div className="rep-scheme" key={id} >
-        <h3>{ exercise_name }</h3>
-        <p>{ comment }</p>
-        { workSets && renderWorkSets() }
-        <hr/>
+        <div className="rep-scheme__header">
+            <h3 className="rep-scheme__name" >{ exercise_name }</h3>
+            <div>
+                <button className="rep-scheme__comment-btn">Comment</button>
+                <button className="rep-scheme__history-btn">History</button>
+            </div>
+            <button className="rep-scheme__delete"><p>X</p></button>
+        </div>
+        <div className="rep-scheme__sets">
+            { workSets && renderWorkSets() }
+        </div>
+        <button className="rep-scheme__add-set">+ Add Set</button>
     </div>
     )
 };

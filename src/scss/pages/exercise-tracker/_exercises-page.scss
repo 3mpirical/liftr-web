@@ -65,9 +65,90 @@
 }
 
 .rep-scheme {
-    margin: 2rem;
-    padding: 1rem;
-    border: 1px solid $color-white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30rem;
+    margin: 1rem;
     border-radius: $border-radius;
     background-color: $color-background-dark;
+    border-bottom: 2px solid $color-primary;
+    overflow: hidden;
+    
+    &__header {
+        width: 100%;
+        padding: 1.5rem 2rem;
+        background-color: $color-primary;
+    }
+    
+    &__delete {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        background-color: transparent;
+
+        &:hover { background-color: $color-primary-light; }
+    }
+
+    &__name {
+        font-size: 2.5rem;
+        font-family: $font-normal;
+    }
+
+    &__comment-btn,
+    &__history-btn, {
+        background-color: transparent;
+        padding: 0;
+        text-decoration: underline;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        color: $color-secondary-light;
+
+        &:hover { background-color: transparent; }
+    }
+
+    &__sets {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        font-size: 2.25rem;
+    }
+
+    &__work-set {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid $color-background;
+        letter-spacing: 2px;
+    }
+
+    &__rpe {
+        background-color: transparent;
+        color: $color-secondary-light;
+        padding: 0;
+
+        &:hover { background-color: transparent; }
+    }
+
+    &__add-set {
+        width: 100%;
+        padding: 1rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: $color-background-dark;
+        color: $color-background-light;
+        text-align: left;
+        font-size: 2rem;
+        letter-spacing: 3px;
+        transition-duration: 0.3s;
+
+        &:hover {
+            color: $color-white;
+            background-color:  transparent;
+        }
+    }
 }
