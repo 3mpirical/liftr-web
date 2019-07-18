@@ -3,7 +3,7 @@ import axios from "axios";
 import ExerciseSearchResult from "./ExerciseSearchResult";
 
 
-const ExerciseSearch = () => {
+const ExerciseSearch = ({ createRepScheme }) => {
     const [term, setTerm] = useState("");
     const [timer, setTimer] = useState(null);
     const [exercises, setExercises] = useState([]);
@@ -24,7 +24,11 @@ const ExerciseSearch = () => {
 
     const renderResults = () => {
         return exercises.map((exercise) => (
-            <ExerciseSearchResult key={exercise.id} exercise={exercise} />
+            <ExerciseSearchResult 
+                key={exercise.id} 
+                exercise={exercise} 
+                createRepScheme={createRepScheme} 
+            />
         ))
     };
 

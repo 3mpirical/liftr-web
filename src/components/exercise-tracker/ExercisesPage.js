@@ -2,7 +2,7 @@ import React from "react";
 import ExerciseSearch from "./ExerciseSearch";
 import RepScheme from "./RepScheme";
 
-const ExercisesPage = ({ repSchemes, currentDate }) => {
+const ExercisesPage = ({ repSchemes, currentDate, createRepScheme }) => {
 
     const renderRepSchemes = () => {
         return repSchemes.map((repScheme) => {
@@ -12,7 +12,7 @@ const ExercisesPage = ({ repSchemes, currentDate }) => {
 
     return (
         <div className="exercises-page">
-            <ExerciseSearch />
+            <ExerciseSearch  createRepScheme={createRepScheme} />
             <div className="exercises-page__rep-schemes-container">
                 { repSchemes && renderRepSchemes()}
             </div>

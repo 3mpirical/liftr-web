@@ -29,6 +29,14 @@ const ExerciseTracker = ({  }) => {
         }
     }, [currentDate]);
 
+    const createRepScheme = (exercise) => {
+        axios.post(`/api/training_dates/${currentDate.id}/rep_schemes`, { exercise_id: exercise.id})
+        .then((res) => {
+            setRepSchemes([...repSchemes, res.data]);
+        })
+        .catch(console.log);
+    }
+
     return (
         <main className="tracker">
             <TrackerNav 
@@ -38,7 +46,7 @@ const ExerciseTracker = ({  }) => {
                 setSelected={setSelected}
             />
             <div className="tracker__page-container">
-                { selected === "exercises" && <ExercisesPage repSchemes={repSchemes} /> }
+                { selected === "exercises" && <ExercisesPage repSchemes={repSchemes} createRepScheme={createRepScheme} /> }
             </div>
         </main>
     )

@@ -1,9 +1,12 @@
 import React from "react";
 
 
-const ExerciseSearchResult = ({ exercise }) => {
+const ExerciseSearchResult = ({ exercise, createRepScheme }) => {
     return (
-        <div className="exercise-search-result">
+        <div className="exercise-search-result" onClick={() => {
+            console.log(exercise)
+            createRepScheme(exercise)
+        }} >
             <img 
                 src={require("../../images/fitness-generic.jpg")} 
                 alt="bodypart thumbnail" 
@@ -12,7 +15,6 @@ const ExerciseSearchResult = ({ exercise }) => {
 
             <div className="exercise-search-result__content">
                 <p className="exercise-search-result__name" >{ exercise.name }</p>
-                {/* <br/> */}
                 <p className="exercise-search-result__meta" >{ exercise.kind  + " | " +exercise.main_bodypart }</p>
             </div>
         </div>
