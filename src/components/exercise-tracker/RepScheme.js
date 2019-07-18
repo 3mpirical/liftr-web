@@ -32,6 +32,15 @@ const RepScheme = ({ repScheme, deleteRepScheme }) => {
         setWorkSets(newWorkSets);
     }
 
+    const updateRpe = (workSet, newRpe) => {
+        const newWorkSets = workSets.map((oldWorkSet) => {
+            if(workSet.id === oldWorkSet.id) oldWorkSet.rpe = newRpe;
+            return oldWorkSet;
+        });
+
+        setWorkSets(newWorkSets);
+    }
+
     const createWorkSet = () => {
         // We're using the last work set as a template
         const lastWorkSet = workSets[workSets.length - 1]
@@ -45,6 +54,14 @@ const RepScheme = ({ repScheme, deleteRepScheme }) => {
         .catch(console.log);
     }
 
+    const deleteWorkSet = (workSet) => {
+        axios.delete(`/api/rep_schemes/${repScheme.id}/work_sets/${workSet.id}`)
+        .then((res) => {
+            setWorkSets(workSets.filter((oldWorkSet) => oldWorkSet.id !== workSet.id));
+        })
+        .catch(console.log);
+    }
+
     const renderWorkSets = () => {
         return workSets.map((workSet) => (
             <WorkSet 
@@ -53,6 +70,8 @@ const RepScheme = ({ repScheme, deleteRepScheme }) => {
                 workSet={workSet} 
                 updateWeight={updateWeight}
                 updateReps={updateReps}
+                updateRpe={updateRpe}
+                deleteWorkSet={deleteWorkSet}
             />
         ))
     }
