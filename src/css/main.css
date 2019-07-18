@@ -237,10 +237,37 @@ a {
   width: 30rem;
   height: 100%;
   border-top: 1px solid #263238;
-  background-color: #11171a; }
+  background-color: #11171a;
+  overflow-y: auto; }
   .exercise-search__search-input {
     width: 100%;
     background-color: #455A64; }
+
+.exercise-search-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #263238;
+  height: 7.5rem;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transform: scale(0.95, 0.85) translateX(-2.5%); }
+  .exercise-search-result__image {
+    height: 100%; }
+  .exercise-search-result__content {
+    flex-grow: 1;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.8rem; }
+  .exercise-search-result__meta {
+    font-size: 1.3rem;
+    color: #00b2c2; }
+  .exercise-search-result:hover {
+    background-color: #303F9F;
+    transform: scale(1); }
+  .exercise-search-result:active {
+    background-color: #CFD8DC;
+    color: #11171a; }
 
 .rep-scheme {
   margin: 2rem;

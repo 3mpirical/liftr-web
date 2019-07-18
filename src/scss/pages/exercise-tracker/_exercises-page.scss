@@ -18,10 +18,48 @@
     height: 100%;
     border-top: 1px solid $color-background;
     background-color: $color-background-dark;
+    overflow-y: auto;
 
     &__search-input {
         width: 100%;
         background-color: $color-background-light;
+    }
+}
+
+.exercise-search-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-background;
+    height: 7.5rem;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    transform: scale(0.95, 0.85) translateX(-2.5%);
+
+    &__image {
+        height: 100%;
+    }
+
+    &__content {
+        flex-grow: 1;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    &__meta {
+        font-size: 1.3rem;
+        color: $color-secondary-light;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        transform: scale(1);
+    }
+
+    &:active {
+        background-color: $color-white;
+        color: $color-background-dark;
     }
 }
 
@@ -32,4 +70,3 @@
     border-radius: $border-radius;
     background-color: $color-background-dark;
 }
-

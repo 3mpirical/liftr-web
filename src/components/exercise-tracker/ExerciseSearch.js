@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import ExerciseSearchResult from "./ExerciseSearchResult";
 
 
 const ExerciseSearch = () => {
     const [term, setTerm] = useState("");
     const [timer, setTimer] = useState(null);
-
-    const handleChange = (event) => {
-        setTerm(event.target.value);
-    };
+    const [exercises, setExercises] = useState([]);
 
     useEffect(() => {
         clearTimeout(timer);
 
         setTimer(setTimeout(function () {
-            console.log(term);
+            axios.get(`/api/exercises/search/${term? term : " "}/`)
+            .then((res) => setExercises(res.data))
+            .catch(console.log);
         }, 500));
     }, [term]);
+
+    const handleChange = (event) => {
+        setTerm(event.target.value);
+    };
+
+    const renderResults = () => {
+        return exercises.map((exercise) => (
+            <ExerciseSearchResult key={exercise.id} exercise={exercise} />
+        ))
+    };
 
     return (
         <div className="exercise-search">
@@ -28,7 +38,7 @@ const ExerciseSearch = () => {
                 name="term"
                 onChange={handleChange}
             />
-
+            { exercises && renderResults() }
         </div>
     );
 };
