@@ -92,7 +92,7 @@
     }
 
     &__name {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
         font-family: $font-normal;
     }
 
@@ -126,6 +126,16 @@
         letter-spacing: 2px;
     }
 
+    &__weight,
+    &__reps {
+        max-width: 10rem;
+        min-width: 5rem;
+        padding: 0;
+        border: none;
+        font-size: inherit;
+        text-align: center;
+    }
+
     &__rpe {
         background-color: transparent;
         color: $color-secondary-light;
@@ -136,7 +146,7 @@
 
     &__add-set {
         width: 100%;
-        padding: 1rem;
+        padding: 1rem 0 1rem 3.5rem;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         background-color: $color-background-dark;

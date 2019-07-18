@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import WorkSet from "./WorkSet";
 
 
-const RepScheme = ({ repScheme }) => {
+const RepScheme = ({ repScheme, deleteRepScheme }) => {
     const { comment, exercise_name, id } = repScheme;
 
     const [workSets, setWorkSets] = useState([]);
@@ -13,14 +14,32 @@ const RepScheme = ({ repScheme }) => {
         .catch(console.log);
     },[]);
 
+    const updateWeight = (workSet, newWeight) => {
+        const newWorkSets = workSets.map((oldWorkSet) => {
+            if(workSet.id === oldWorkSet.id) oldWorkSet.weight = newWeight;
+            return oldWorkSet;
+        });
+
+        setWorkSets(newWorkSets);
+    }
+
+    const updateReps = (workSet, newReps) => {
+        const newWorkSets = workSets.map((oldWorkSet) => {
+            if(workSet.id === oldWorkSet.id) oldWorkSet.reps = newReps;
+            return oldWorkSet;
+        });
+
+        setWorkSets(newWorkSets);
+    }
+
     const renderWorkSets = () => {
-        return workSets.map(({ reps, weight, rpe, id }) => (
-            <div className="rep-scheme__work-set" key={id}>
-                <p>{ weight }</p> 
-                <p>X</p>
-                <p>{ reps }</p>
-                <button className="rep-scheme__rpe" >RPE</button>
-            </div>
+        return workSets.map((workSet) => (
+            <WorkSet 
+                key={workSet.id} 
+                workSet={workSet} 
+                updateWeight={updateWeight}
+                updateReps={updateReps}
+            />
         ))
     }
 
@@ -33,7 +52,12 @@ const RepScheme = ({ repScheme }) => {
                 <button className="rep-scheme__comment-btn">Comment</button>
                 <button className="rep-scheme__history-btn">History</button>
             </div>
-            <button className="rep-scheme__delete"><p>X</p></button>
+            <button 
+                className="rep-scheme__delete"
+                onClick={() => deleteRepScheme(repScheme)}
+            >
+                <p>X</p>
+            </button>
         </div>
         <div className="rep-scheme__sets">
             { workSets && renderWorkSets() }

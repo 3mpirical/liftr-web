@@ -35,7 +35,31 @@ const ExerciseTracker = ({  }) => {
             setRepSchemes([...repSchemes, res.data]);
         })
         .catch(console.log);
+    };
+
+    const deleteRepScheme = (repScheme) => {
+        axios.delete(`/api/training_dates/${currentDate.id}/rep_schemes/${repScheme.id}`)
+        .then((res) => {
+            const newRepSchemes = repSchemes.filter((oldRepScheme) => (
+                repScheme.id !== oldRepScheme.id
+            ));
+            setRepSchemes(newRepSchemes)
+        })
+        .catch(console.log);
     }
+
+    ////////////////////////////////////////////////////////////
+    ///// Slightly more involved because it requies that we
+    ///// toggle the textarea below and submit request when the  
+    ///// user stops typing.
+    ////////////////////////////////////////////////////////////
+    // const updateRepScheme = (repScheme) => {
+    //     axios.put(
+    //         `/api/training_date/${currentDate.id}/rep_schemes/${repScheme.id}`, 
+    //         {rep_scheme: repScheme}
+    //     ).then(console.log)
+    //     .catch(console.log);
+    // }
 
     return (
         <main className="tracker">
@@ -46,7 +70,13 @@ const ExerciseTracker = ({  }) => {
                 setSelected={setSelected}
             />
             <div className="tracker__page-container">
-                { selected === "exercises" && <ExercisesPage repSchemes={repSchemes} createRepScheme={createRepScheme} /> }
+                { selected === "exercises" 
+                  && <ExercisesPage 
+                        repSchemes={repSchemes}
+                        createRepScheme={createRepScheme} 
+                        deleteRepScheme={deleteRepScheme}
+                        /> 
+                }
             </div>
         </main>
     )

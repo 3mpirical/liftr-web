@@ -293,7 +293,7 @@ a {
     .rep-scheme__delete:hover {
       background-color: #5161ca; }
   .rep-scheme__name {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-family: "Jura"; }
   .rep-scheme__comment-btn, .rep-scheme__history-btn {
     background-color: transparent;
@@ -318,6 +318,13 @@ a {
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid #263238;
     letter-spacing: 2px; }
+  .rep-scheme__weight, .rep-scheme__reps {
+    max-width: 10rem;
+    min-width: 5rem;
+    padding: 0;
+    border: none;
+    font-size: inherit;
+    text-align: center; }
   .rep-scheme__rpe {
     background-color: transparent;
     color: #00b2c2;
@@ -326,7 +333,7 @@ a {
       background-color: transparent; }
   .rep-scheme__add-set {
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0 1rem 3.5rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     background-color: #11171a;
