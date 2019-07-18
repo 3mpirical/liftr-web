@@ -36,6 +36,7 @@ const RepScheme = ({ repScheme, deleteRepScheme }) => {
         return workSets.map((workSet) => (
             <WorkSet 
                 key={workSet.id} 
+                repScheme={repScheme}
                 workSet={workSet} 
                 updateWeight={updateWeight}
                 updateReps={updateReps}

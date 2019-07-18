@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
 
 
-const WorkSet = ({ workSet, updateWeight, updateReps }) =>{
+const WorkSet = ({ workSet, repScheme ,updateWeight, updateReps }) =>{
     const { reps, weight, rpe, id } = workSet;
 
     const [weightTimer, setWeightTimer] = useState(null);
@@ -16,6 +17,11 @@ const WorkSet = ({ workSet, updateWeight, updateReps }) =>{
             
             setWeightTimer(setTimeout(() => {
                 console.log("weight timer triggered")
+                axios.put(
+                    `/api/rep_schemes/${repScheme.id}/work_sets/${workSet.id}`,
+                    { weight }   
+                ).then(() => console.log("success"))
+                .catch(console.log)
             }, 500));
         }
     }, [weight]);
@@ -26,7 +32,11 @@ const WorkSet = ({ workSet, updateWeight, updateReps }) =>{
             clearTimeout(repsTimer);
             
             setRepsTimer(setTimeout(() => {
-                console.log("reps timer triggered")
+                axios.put(
+                    `/api/rep_schemes/${repScheme.id}/work_sets/${workSet.id}`,
+                    { reps }   
+                ).then(() => console.log("success"))
+                .catch(console.log)
             }, 500));
         }
     }, [reps]);
@@ -46,7 +56,7 @@ const WorkSet = ({ workSet, updateWeight, updateReps }) =>{
             <input 
                 type="number" 
                 className="rep-scheme__weight"
-                value={weight}
+                value={weight !== null? weight : ""}
                 name="weight"
                 onChange={handleWeightChange}
             /> 
@@ -54,7 +64,7 @@ const WorkSet = ({ workSet, updateWeight, updateReps }) =>{
             <input 
                 type="number" 
                 className="rep-scheme__reps"
-                value={reps}
+                value={reps !== null? reps : "" }
                 name="reps"
                 onChange={handleRepsChange}
             /> 
