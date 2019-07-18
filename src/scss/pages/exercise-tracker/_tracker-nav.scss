@@ -26,13 +26,22 @@
     }
 
     &__date {
-        margin-right: 1rem;
-        letter-spacing: 2px;
-        background-color: transparent;
+        width: 15rem;
+        padding: 0.25rem 0;
+        border-bottom: none;
+        background-color: $color-background;
+        color: $color-white;
+        border-radius: $border-radius;
+        text-align: center;
+        font-size: 2rem;
+        cursor: pointer;
 
-        &:hover {
-            background-color: $color-white;
-            color: $color-background-dark;
+        &:hover{ 
+            background-color: $color-background-light; 
+        }
+        
+        &:focus {
+            background-color: $color-background-light; 
         }
     }
 }

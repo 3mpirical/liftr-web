@@ -214,20 +214,29 @@ a {
     justify-content: space-between;
     align-items: center; }
   .tracker-nav__date {
-    margin-right: 1rem;
-    letter-spacing: 2px;
-    background-color: transparent; }
+    width: 15rem;
+    padding: 0.25rem 0;
+    border-bottom: none;
+    background-color: #263238;
+    color: #CFD8DC;
+    border-radius: 2.5px;
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer; }
     .tracker-nav__date:hover {
-      background-color: #CFD8DC;
-      color: #11171a; }
+      background-color: #455A64; }
+    .tracker-nav__date:focus {
+      background-color: #455A64; }
 
 .exercises-page {
   display: flex;
+  align-items: flex-start;
   height: 100%;
   width: 100%; }
   .exercises-page__rep-schemes-container {
+    flex-grow: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     padding: 2rem 2rem 0 2rem;
@@ -280,7 +289,8 @@ a {
   border-radius: 2.5px;
   background-color: #11171a;
   border-bottom: 2px solid #303F9F;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.25); }
   .rep-scheme__header {
     width: 100%;
     padding: 1.5rem 2rem;
