@@ -38,8 +38,8 @@ const RepScheme = ({ repScheme, deleteRepScheme }) => {
         axios.post(
             `/api/rep_schemes/${repScheme.id}/work_sets`, 
             { 
-                weight: lastWorkSet? lastWorkSet.weight : 0, 
-                reps: lastWorkSet? lastWorkSet.reps : 0, 
+                weight: lastWorkSet? lastWorkSet.weight : null, 
+                reps: lastWorkSet? lastWorkSet.reps : null, 
             }
         ).then((res) => setWorkSets([...workSets, res.data]))
         .catch(console.log);

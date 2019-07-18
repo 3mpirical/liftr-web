@@ -16,7 +16,6 @@ const WorkSet = ({ workSet, repScheme ,updateWeight, updateReps }) =>{
             clearTimeout(weightTimer);
             
             setWeightTimer(setTimeout(() => {
-                console.log("weight timer triggered")
                 axios.put(
                     `/api/rep_schemes/${repScheme.id}/work_sets/${workSet.id}`,
                     { weight }   
