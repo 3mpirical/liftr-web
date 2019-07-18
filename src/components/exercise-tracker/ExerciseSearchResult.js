@@ -3,10 +3,7 @@ import React from "react";
 
 const ExerciseSearchResult = ({ exercise, createRepScheme }) => {
     return (
-        <div className="exercise-search-result" onClick={() => {
-            console.log(exercise)
-            createRepScheme(exercise)
-        }} >
+        <div className="exercise-search-result" onClick={() => createRepScheme(exercise)} >
             <img 
                 src={require("../../images/fitness-generic.jpg")} 
                 alt="bodypart thumbnail" 
