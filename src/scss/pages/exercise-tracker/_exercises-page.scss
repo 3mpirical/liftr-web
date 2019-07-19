@@ -119,8 +119,7 @@
         display: flex;
         width: 100%;
         padding: 1rem;
-        background-color: $color-secondary;
-
+        
         textarea {
             flex-grow: 1;
             background-color: transparent;
@@ -167,9 +166,7 @@
             &:hover { background-color: transparent; }
         }
 
-        &:hover > button {
-            opacity: 1;
-        }
+        &:hover > button { opacity: 1; }
     }
 
     &__weight,

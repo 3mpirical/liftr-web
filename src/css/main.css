@@ -330,8 +330,7 @@ a {
   .rep-scheme__comment {
     display: flex;
     width: 100%;
-    padding: 1rem;
-    background-color: #00838F; }
+    padding: 1rem; }
     .rep-scheme__comment textarea {
       flex-grow: 1;
       background-color: transparent;

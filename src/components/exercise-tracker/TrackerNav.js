@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
-import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 
 
@@ -34,6 +33,9 @@ const TrackerNav = ({ currentDate, changeCurrentDate, selected, setSelected }) =
                         selected={new Date(currentDate.date + " 00:00")}
                         onChange={changeCurrentDate}
                         dateFormat="MM-dd-yy"
+                        // highlightDates={[
+                        //     // dates goes here,
+                        // ]}
                     /> 
                 }
             </div>
