@@ -22,10 +22,9 @@
     flex-shrink: 0;
     width: 30rem;
     height: 100%;
-    border-top: 1px solid $color-background;
     background-color: $color-background-dark;
     overflow-y: auto;
-
+    
     &__search-input {
         width: 100%;
         background-color: $color-background-light;
