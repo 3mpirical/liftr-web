@@ -116,6 +116,26 @@
         &:hover { background-color: transparent; }
     }
 
+    &__comment {
+        display: flex;
+        width: 100%;
+        padding: 1rem;
+        background-color: $color-secondary;
+
+        textarea {
+            flex-grow: 1;
+            background-color: transparent;
+            border: 1px solid rgba($color-white, 0.5);
+            border-radius: $border-radius;
+            color: $color-white;
+            padding: 0.5rem;
+            font-size: 1.4rem;
+            font-family: $font-normal;
+            letter-spacing: 1px;
+        }
+
+    }
+
     &__sets {
         display: flex;
         flex-direction: column;

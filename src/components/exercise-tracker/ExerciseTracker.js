@@ -94,6 +94,15 @@ const ExerciseTracker = ({  }) => {
         .catch(console.log);
     };
 
+    const updateComment = (repScheme, newComment) => {
+        const newRepSchemes = repSchemes.map((oldRepScheme) => {
+            if(repScheme.id === oldRepScheme.id) oldRepScheme.comment = newComment;
+            return oldRepScheme;
+        })
+
+        setRepSchemes(newRepSchemes);
+    };
+
     const changeCurrentDate = (datePicked) => {
         datePicked = moment(datePicked).format("YYYY-MM-DD");
         axios.get(`/api/users/${user.id}/training_dates/get_by_date/${datePicked}`)
@@ -103,19 +112,6 @@ const ExerciseTracker = ({  }) => {
         })
         .catch(console.log);
     };
-
-    ////////////////////////////////////////////////////////////
-    ///// Slightly more involved because it requies that we
-    ///// toggle the textarea below and submit request when the  
-    ///// user stops typing.
-    ////////////////////////////////////////////////////////////
-    // const updateRepScheme = (repScheme) => {
-    //     axios.put(
-    //         `/api/training_date/${currentDate.id}/rep_schemes/${repScheme.id}`, 
-    //         {rep_scheme: repScheme}
-    //     ).then(console.log)
-    //     .catch(console.log);
-    // }
 
     return (
         <main className="tracker">
@@ -131,6 +127,8 @@ const ExerciseTracker = ({  }) => {
                         repSchemes={repSchemes}
                         createRepScheme={createRepScheme} 
                         deleteRepScheme={deleteRepScheme}
+                        updateComment={updateComment}
+                        currentDate={currentDate}
                         /> 
                 }
             </div>

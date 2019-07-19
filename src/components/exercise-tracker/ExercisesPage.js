@@ -2,7 +2,7 @@ import React from "react";
 import ExerciseSearch from "./ExerciseSearch";
 import RepScheme from "./RepScheme";
 
-const ExercisesPage = ({ repSchemes, currentDate, createRepScheme, deleteRepScheme }) => {
+const ExercisesPage = ({ repSchemes, currentDate, createRepScheme, deleteRepScheme, updateComment }) => {
 
     const renderRepSchemes = () => {
         return repSchemes.map((repScheme) => {
@@ -10,6 +10,8 @@ const ExercisesPage = ({ repSchemes, currentDate, createRepScheme, deleteRepSche
                     key={repScheme.id} 
                     repScheme={repScheme} 
                     deleteRepScheme={deleteRepScheme}
+                    updateComment={updateComment}
+                    currentDate={currentDate}
                     />
         })
     }
