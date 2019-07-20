@@ -33,9 +33,7 @@ class Register extends React.Component {
             if(err.message === "Request failed with status code 422") {
                 this.props.openDefaultBlackModal(() => (
                     <>
-                        <p style={{fontSize: "3rem"}}>Invalid Email Format</p>
-                        <p style={{fontSize: "3rem"}}>Make sure you include the domain</p>
-                        <p style={{fontSize: "3rem"}}>( Example: .net .com .org )</p>
+                        <p style={{fontSize: "3rem"}}>Invalid Email</p>
                     </>
                 ));
             } else if( err.message === "Request failed with status code 500" ) {
@@ -44,7 +42,7 @@ class Register extends React.Component {
                 ));
             }
 
-            console.log(JSON.stringify(err, null, 2));
+            console.log(err);
         })
     }
     
