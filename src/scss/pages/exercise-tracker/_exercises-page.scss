@@ -7,6 +7,11 @@
     height: 100%;
     width: 100%;
 
+    &__rep-schemes-overflow-container {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+    }
     &__rep-schemes-container {
         flex-grow: 1;
         display: flex;
@@ -15,6 +20,12 @@
         flex-wrap: wrap;
         padding: 1rem;
         overflow-y: auto;
+    }
+
+    &__no-rep-schemes {
+        margin-top: 10rem;
+        color: $color-background-dark;
+        animation: fade-in 0.2s ease-in;
     }
 }
 

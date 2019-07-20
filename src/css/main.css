@@ -245,6 +245,10 @@ a {
   align-items: flex-start;
   height: 100%;
   width: 100%; }
+  .exercises-page__rep-schemes-overflow-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll; }
   .exercises-page__rep-schemes-container {
     flex-grow: 1;
     display: flex;
@@ -253,6 +257,10 @@ a {
     flex-wrap: wrap;
     padding: 1rem;
     overflow-y: auto; }
+  .exercises-page__no-rep-schemes {
+    margin-top: 10rem;
+    color: #11171a;
+    animation: fade-in 0.2s ease-in; }
 
 .exercise-search {
   flex-shrink: 0;

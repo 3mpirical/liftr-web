@@ -2,7 +2,13 @@ import React from "react";
 import ExerciseSearch from "./ExerciseSearch";
 import RepScheme from "./RepScheme";
 
-const ExercisesPage = ({ repSchemes, currentDate, createRepScheme, deleteRepScheme, updateComment }) => {
+const ExercisesPage = ({ 
+    repSchemes, 
+    currentDate, 
+    createRepScheme, 
+    deleteRepScheme, 
+    updateComment,
+    }) => {
 
     const renderRepSchemes = () => {
         return repSchemes.map((repScheme) => {
@@ -19,8 +25,16 @@ const ExercisesPage = ({ repSchemes, currentDate, createRepScheme, deleteRepSche
     return (
         <div className="exercises-page">
             <ExerciseSearch  createRepScheme={createRepScheme} />
-            <div className="exercises-page__rep-schemes-container">
-                { repSchemes && renderRepSchemes()}
+            <div className="exercises-page__rep-schemes-overflow-container">
+                <div className="exercises-page__rep-schemes-container">
+                    { repSchemes.length > 0 && currentDate.id && renderRepSchemes() }
+                    { !currentDate.id && (
+                        <h2 
+                            className="exercises-page__no-rep-schemes" >
+                            No Workouts Logged Today
+                        </h2>
+                    )}
+                </div>
             </div>
         </div>
     );

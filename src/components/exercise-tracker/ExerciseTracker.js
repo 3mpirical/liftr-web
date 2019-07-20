@@ -32,6 +32,7 @@ const ExerciseTracker = ({  }) => {
         } else if(currentDate.id && !creatingDate) {
             axios.get(`/api/training_dates/${currentDate.id}/rep_schemes`)
             .then((res) => { 
+                console.log(JSON.stringify(res, null, 2))
                 setRepSchemes(res.data);
             })
             .catch(console.log);
