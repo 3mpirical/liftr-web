@@ -102,11 +102,9 @@
         position: absolute;
         top: 0.75rem;
         right: 0.75rem;
-        background-color: transparent;
+        color: $color-primary-light;
         border-radius: 1000px;
         cursor: pointer;
-
-        &:hover { background-color: $color-primary-light; }
     }
 
     &__name {

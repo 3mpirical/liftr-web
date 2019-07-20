@@ -320,11 +320,9 @@ a {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    background-color: transparent;
+    color: #5161ca;
     border-radius: 1000px;
     cursor: pointer; }
-    .rep-scheme__delete:hover {
-      background-color: #5161ca; }
   .rep-scheme__name {
     font-size: 2.25rem;
     font-family: "Jura"; }
