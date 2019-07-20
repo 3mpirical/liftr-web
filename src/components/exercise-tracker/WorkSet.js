@@ -4,11 +4,10 @@ import axios from "axios";
 
 const WorkSet = ({ 
     workSet, 
-    repScheme, 
     deleteWorkSet, 
     updateWorkSetState, 
     updateWorkSetRequest }) =>{
-        
+
     const { reps, weight, rpe, id } = workSet;
 
     const [weightTimer, setWeightTimer] = useState(null);

@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-const TrackerNav = ({ currentDate, changeCurrentDate, selected, setSelected }) => {
+const TrackerNav = ({ currentDate, changeCurrentDate, selected, setSelected, datesArray }) => {
 
     return (
         <div className="tracker-nav">
@@ -33,9 +33,7 @@ const TrackerNav = ({ currentDate, changeCurrentDate, selected, setSelected }) =
                         selected={new Date(currentDate.date + " 00:00")}
                         onChange={changeCurrentDate}
                         dateFormat="MM-dd-yy"
-                        // highlightDates={[
-                        //     // dates goes here,
-                        // ]}
+                        highlightDates={datesArray.map((date) => new Date(date + " 00:00"))}
                     /> 
                 }
             </div>

@@ -12,6 +12,7 @@ const ExerciseTracker = ({  }) => {
     const [repSchemes, setRepSchemes] = useState([]);
     const [creatingDate, setCreatingDate] = useState(false);
     const [deletingDate, setDeletingDate] = useState(false);
+    const [datesArray, setDatesArray] = useState([])
     const [currentDate, setCurrentDate] = useState({ 
         id: null, 
         date: moment().format("YYYY-MM-DD"),
@@ -24,7 +25,12 @@ const ExerciseTracker = ({  }) => {
             if(res.data) setCurrentDate(res.data);
         })
         .catch(console.log);
+
+        axios.get(`/api/users/${user.id}/training_dates/index_of_dates_only`)
+        .then((res) => setDatesArray(res.data))
+        .catch(console.log)
     }, []);
+
 
     useEffect(() => {
         if(firstRender.current) {
@@ -53,6 +59,7 @@ const ExerciseTracker = ({  }) => {
             axios.post(`/api/users/${user.id}/training_dates`, { date: currentDate.date })
             .then((res) => {
                 setCurrentDate(res.data);
+                setDatesArray([...datesArray, currentDate.date]);
                 return axios.post(
                     `/api/training_dates/${res.data.id}/rep_schemes`, 
                     { exercise_id: exercise.id}
@@ -91,6 +98,7 @@ const ExerciseTracker = ({  }) => {
         })
         .then((res) => {
             if(res) {
+                setDatesArray(datesArray.filter((date) => date !== currentDate.date));
                 setCurrentDate({ date: currentDate.date, id: null });
                 setDeletingDate(false)
             }
@@ -120,6 +128,7 @@ const ExerciseTracker = ({  }) => {
     return (
         <main className="tracker">
             <TrackerNav 
+                datesArray={datesArray}
                 currentDate={currentDate} 
                 changeCurrentDate={changeCurrentDate}
                 selected={selected}
