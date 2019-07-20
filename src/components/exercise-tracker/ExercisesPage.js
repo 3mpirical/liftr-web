@@ -28,7 +28,7 @@ const ExercisesPage = ({
             <div className="exercises-page__rep-schemes-overflow-container">
                 <div className="exercises-page__rep-schemes-container">
                     { repSchemes.length > 0 && currentDate.id && renderRepSchemes() }
-                    { !currentDate.id && (
+                    { currentDate.id === null && (
                         <h2 
                             className="exercises-page__no-rep-schemes" >
                             No Workouts Logged Today

@@ -14,7 +14,9 @@ const ExerciseTracker = ({  }) => {
     const [deletingDate, setDeletingDate] = useState(false);
     const [datesArray, setDatesArray] = useState([])
     const [currentDate, setCurrentDate] = useState({ 
-        id: null, 
+        // set to undefined rather than null so 
+        // message for no workouts doesn't render right away
+        id: undefined, 
         date: moment().format("YYYY-MM-DD"),
     });
     const firstRender = useRef(true);
@@ -23,12 +25,13 @@ const ExerciseTracker = ({  }) => {
         axios.get(`/api/users/${user.id}/training_dates/get_by_date/${moment().format('YYYY-MM-DD')}`)
         .then((res) => {
             if(res.data) setCurrentDate(res.data);
+            else setCurrentDate({ id: null, date: currentDate.date });
         })
         .catch(console.log);
 
         axios.get(`/api/users/${user.id}/training_dates/index_of_dates_only`)
         .then((res) => setDatesArray(res.data))
-        .catch(console.log)
+        .catch(console.log);
     }, []);
 
 
