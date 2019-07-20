@@ -37,33 +37,6 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
         updateComment(repScheme, event.target.value);
     };
 
-    const updateWeight = (workSet, newWeight) => {
-        const newWorkSets = workSets.map((oldWorkSet) => {
-            if(workSet.id === oldWorkSet.id) oldWorkSet.weight = newWeight;
-            return oldWorkSet;
-        });
-
-        setWorkSets(newWorkSets);
-    }
-
-    const updateReps = (workSet, newReps) => {
-        const newWorkSets = workSets.map((oldWorkSet) => {
-            if(workSet.id === oldWorkSet.id) oldWorkSet.reps = newReps;
-            return oldWorkSet;
-        });
-
-        setWorkSets(newWorkSets);
-    }
-
-    const updateRpe = (workSet, newRpe) => {
-        const newWorkSets = workSets.map((oldWorkSet) => {
-            if(workSet.id === oldWorkSet.id) oldWorkSet.rpe = newRpe;
-            return oldWorkSet;
-        });
-
-        setWorkSets(newWorkSets);
-    }
-
     const createWorkSet = () => {
         // We're using the last work set as a template
         const lastWorkSet = workSets[workSets.length - 1]
@@ -86,15 +59,31 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
         .catch(console.log);
     }
 
+    const updateWorkSetState = (workSet, key, newValue) => {
+        const newWorkSets = workSets.map((oldWorkSet) => {
+            if(workSet.id === oldWorkSet.id) oldWorkSet[key] = newValue;
+            return oldWorkSet;
+        });
+
+        setWorkSets(newWorkSets);
+    };
+
+    const updateWorkSetRequest = (workSet, keyName, value) => {
+        axios.put(
+            `/api/rep_schemes/${repScheme.id}/work_sets/${workSet.id}`,
+            { [keyName]: value }   
+        ).then(() => console.log("success"))
+        .catch(console.log)
+    }
+
     const renderWorkSets = () => {
         return workSets.map((workSet) => (
             <WorkSet 
                 key={workSet.id} 
                 repScheme={repScheme}
                 workSet={workSet} 
-                updateWeight={updateWeight}
-                updateReps={updateReps}
-                updateRpe={updateRpe}
+                updateWorkSetState={updateWorkSetState}
+                updateWorkSetRequest={updateWorkSetRequest}
                 deleteWorkSet={deleteWorkSet}
             />
         ))

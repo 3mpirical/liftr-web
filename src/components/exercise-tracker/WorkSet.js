@@ -2,7 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 
-const WorkSet = ({ workSet, repScheme ,updateWeight, updateReps, updateRpe, deleteWorkSet }) =>{
+const WorkSet = ({ 
+    workSet, 
+    repScheme, 
+    deleteWorkSet, 
+    updateWorkSetState, 
+    updateWorkSetRequest }) =>{
+        
     const { reps, weight, rpe, id } = workSet;
 
     const [weightTimer, setWeightTimer] = useState(null);
@@ -18,11 +24,7 @@ const WorkSet = ({ workSet, repScheme ,updateWeight, updateReps, updateRpe, dele
             clearTimeout(weightTimer);
             
             setWeightTimer(setTimeout(() => {
-                axios.put(
-                    `/api/rep_schemes/${repScheme.id}/work_sets/${workSet.id}`,
-                    { weight }   
-                ).then(() => console.log("success"))
-                .catch(console.log)
+                updateWorkSetRequest(workSet, "weight", weight);
             }, 500));
         }
     }, [weight]);
@@ -33,11 +35,7 @@ const WorkSet = ({ workSet, repScheme ,updateWeight, updateReps, updateRpe, dele
             clearTimeout(rpeTimer);
             
             setRpeTimer(setTimeout(() => {
-                axios.put(
-                    `/api/rep_schemes/${repScheme.id}/work_sets/${workSet.id}`,
-                    { rpe }   
-                ).then(() => console.log("success"))
-                .catch(console.log)
+                updateWorkSetRequest(workSet, "rpe", rpe);
             }, 500));
         }
     }, [rpe]);
@@ -48,26 +46,22 @@ const WorkSet = ({ workSet, repScheme ,updateWeight, updateReps, updateRpe, dele
             clearTimeout(repsTimer);
             
             setRepsTimer(setTimeout(() => {
-                axios.put(
-                    `/api/rep_schemes/${repScheme.id}/work_sets/${workSet.id}`,
-                    { reps }   
-                ).then(() => console.log("success"))
-                .catch(console.log)
+                updateWorkSetRequest(workSet, "reps", reps);
             }, 500));
         }
     }, [reps]);
 
     const handleWeightChange = (event) => {
-        updateWeight(workSet, event.target.value);
+        updateWorkSetState(workSet, "weight", event.target.value);
     }
 
 
     const handleRepsChange = (event) => {
-        updateReps(workSet, event.target.value);
+        updateWorkSetState(workSet, "reps", event.target.value);
     }
 
     const handleRpeChange = (event) => {
-        updateRpe(workSet, event.target.value);
+        updateWorkSetState(workSet, "rpe", event.target.value);
     }
 
 
