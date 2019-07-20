@@ -251,7 +251,7 @@ a {
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 2rem 2rem 0 2rem;
+    padding: 1rem;
     overflow-y: auto; }
 
 .exercise-search {
@@ -447,7 +447,8 @@ a {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 100000000; }
+  z-index: 100000000;
+  animation: fade-in 0.1s ease-in; }
   .modal__clickzone {
     display: flex;
     justify-content: center;

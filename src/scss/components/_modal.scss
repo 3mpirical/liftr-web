@@ -4,7 +4,8 @@
     width: 100vw;
     background-color: rgba(black, 0.9 );
     z-index: 100000000;
-
+    animation: fade-in 0.1s ease-in;
+    
     &__clickzone {
         display: flex;
         justify-content: center;
@@ -13,7 +14,7 @@
         height: 100%;
         width: 100%;
     }
-
+    
     &__default-prompt {
         position: relative;
         background-color: $color-background;
