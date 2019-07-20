@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import { FaRegTimesCircle } from "react-icons/fa";
 
 
 const WorkSet = ({ 
@@ -91,11 +91,15 @@ const WorkSet = ({
                 onChange={handleRpeChange}
                 placeholder="RPE"
             /> 
-            <button 
+            {/* <button 
                 className="rep-scheme__work-set__delete" 
                 tabIndex="-1" 
                 onClick={() => deleteWorkSet(workSet)}
-            >X</button>
+                >X</button> */}
+            <FaRegTimesCircle 
+                className="rep-scheme__work-set__delete" 
+                onClick={() => deleteWorkSet(workSet)}
+            />
         </div>
     )
 };

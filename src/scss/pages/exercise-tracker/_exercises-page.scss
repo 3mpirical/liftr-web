@@ -1,6 +1,4 @@
 
-
-
 .exercises-page {
     display: flex;
     align-items: flex-start;
@@ -105,6 +103,8 @@
         top: 0.75rem;
         right: 0.75rem;
         background-color: transparent;
+        border-radius: 1000px;
+        cursor: pointer;
 
         &:hover { background-color: $color-primary-light; }
     }
@@ -168,16 +168,16 @@
             position: absolute;
             top: 0.25rem;
             right: 0.25rem;
-            padding: 0;
             background-color: transparent;
+            color: $color-background-light;
             font-size: 1.2rem;
-            text-align: center;
             transition-duration: 0.3s;
+            cursor: pointer;
 
             &:hover { background-color: transparent; }
         }
 
-        &:hover > button { opacity: 1; }
+        &:hover > svg { opacity: 1; }
     }
 
     &__weight,

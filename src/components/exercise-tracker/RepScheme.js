@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import WorkSet from "./WorkSet";
+import { FaRegTimesCircle } from "react-icons/fa";
 
 
 const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) => {
@@ -102,12 +103,10 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
                     >Comment</button>
                     <button className="rep-scheme__history-btn">History</button>
                 </div>
-                <button 
+                <FaRegTimesCircle 
                     className="rep-scheme__delete"
                     onClick={() => deleteRepScheme(repScheme)}
-                >
-                    <p>X</p>
-                </button>
+                />
             </div>
             { commentOpen 
                 &&  <div className="rep-scheme__comment">

@@ -28,18 +28,7 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            padding: 0.75rem 1rem;
-            color: $color-white;
-            border: none;
-            border-radius: 1000px;
-            background-color: $color-primary;
-            transition-duration: 0.1s;
             cursor: pointer;
-            
-            &:hover {
-                background-color: $color-white;
-                color: $color-primary;
-            }
         }
 
     }

@@ -320,7 +320,9 @@ a {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    background-color: transparent; }
+    background-color: transparent;
+    border-radius: 1000px;
+    cursor: pointer; }
     .rep-scheme__delete:hover {
       background-color: #5161ca; }
   .rep-scheme__name {
@@ -369,14 +371,14 @@ a {
       position: absolute;
       top: 0.25rem;
       right: 0.25rem;
-      padding: 0;
       background-color: transparent;
+      color: #455A64;
       font-size: 1.2rem;
-      text-align: center;
-      transition-duration: 0.3s; }
+      transition-duration: 0.3s;
+      cursor: pointer; }
       .rep-scheme__work-set__delete:hover {
         background-color: transparent; }
-    .rep-scheme__work-set:hover > button {
+    .rep-scheme__work-set:hover > svg {
       opacity: 1; }
   .rep-scheme__weight, .rep-scheme__reps, .rep-scheme__rpe {
     max-width: 10rem;
@@ -476,13 +478,4 @@ a {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      padding: 0.75rem 1rem;
-      color: #CFD8DC;
-      border: none;
-      border-radius: 1000px;
-      background-color: #303F9F;
-      transition-duration: 0.1s;
       cursor: pointer; }
-      .modal__default-prompt__close:hover {
-        background-color: #CFD8DC;
-        color: #303F9F; }

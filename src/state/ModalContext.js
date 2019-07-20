@@ -1,4 +1,5 @@
 import React from "react";
+import { FaRegTimesCircle } from "react-icons/fa";
 
 const ModalContext = React.createContext();
 
@@ -37,11 +38,10 @@ const ModalBlackDefault = ({ component: Component, ...rest }) => {
                 onClick={closeModal}
                 >
                 <div className="modal__default-prompt">
-                    <button
+                    <FaRegTimesCircle 
                         onClick={() => rest.closeModal()} 
-                        className="modal__default-prompt__close">
-                        X
-                    </button>
+                        className="modal__default-prompt__close"
+                    />
                     <Component {...rest} />
                 </div>
             </div>
