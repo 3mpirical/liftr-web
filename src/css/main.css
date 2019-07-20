@@ -462,7 +462,7 @@ a {
     border-bottom: 3px solid #303F9F;
     border-radius: 2.5px;
     width: 60rem;
-    padding: 5rem 0;
+    padding: 5rem 2rem;
     text-align: center; }
     .modal__default-prompt__close {
       position: absolute;

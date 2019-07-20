@@ -8,16 +8,21 @@ import ExercisesPage from "./ExercisesPage";
 
 const ExerciseTracker = ({  }) => {
     const { user } = useContext(AuthContext);
-    const [selected, setSelected] = useState(null);
-    const [currentDate, setCurrentDate] = useState(null);
+    const [selected, setSelected] = useState("exercises");
+    const [repSchemes, setRepSchemes] = useState([]);
     const [creatingDate, setCreatingDate] = useState(false);
     const [deletingDate, setDeletingDate] = useState(false);
-    const [repSchemes, setRepSchemes] = useState([]);
+    const [currentDate, setCurrentDate] = useState({ 
+        id: null, 
+        date: moment().format("YYYY-MM-DD"),
+    });
     const firstRender = useRef(true);
 
     useEffect(() => {
         axios.get(`/api/users/${user.id}/training_dates/get_by_date/${moment().format('YYYY-MM-DD')}`)
-        .then((res) => setCurrentDate(res.data))
+        .then((res) => {
+            if(res.data) setCurrentDate(res.data);
+        })
         .catch(console.log);
     }, []);
 
@@ -28,7 +33,6 @@ const ExerciseTracker = ({  }) => {
             axios.get(`/api/training_dates/${currentDate.id}/rep_schemes`)
             .then((res) => { 
                 setRepSchemes(res.data);
-                setSelected("exercises");
             })
             .catch(console.log);
         } else {

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {ModalBlack} from "./ModalContext";
 
 
 const AuthContext = React.createContext();
@@ -7,22 +8,12 @@ const AuthContext = React.createContext();
 class AuthProvider extends React.Component {
     state = { user: null }
 
-    handleRegister = (user, history) => {
-        axios.post("/api/auth", user)
-        .then((res) => {
-            this.setState({ user: res.data.data });
-            history.push("/");
-        })
-        .catch(console.log)
+    handleRegister = (user) => {
+        return axios.post("/api/auth", user);
     }
 
-    handleLogin = (user, history) => {
-        axios.post("/api/auth/sign_in", user)
-        .then((res) => {
-            this.setState({ user: res.data.data });
-            history.push("/");
-        })
-        .catch(console.log)
+    handleLogin = (user) => {
+       return axios.post("/api/auth/sign_in", user);
     }
 
     handleLogout = (history) => {

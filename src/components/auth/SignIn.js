@@ -1,5 +1,6 @@
 import React from "react";
 import { withAuth } from "../../state/AuthContext";
+import { withModal } from "../../state/ModalContext";
 
 
 class SignIn extends React.Component {
@@ -14,8 +15,25 @@ class SignIn extends React.Component {
     }
 
     handleSubmit = (event) => {
+        const { handleLogin, setUser } = this.props;
         event.preventDefault();
-        this.props.handleLogin(this.state, this.props.history);
+        handleLogin(this.state)
+        .then((res) => {
+            setUser(res.data);
+            this.props.history.push("/");
+        })
+        .catch((err) => {
+            if(err.message === "Request failed with status code 401") {
+                this.props.openDefaultBlackModal(() => (
+                    <div style={{fontSize: "3rem"}}>Invalid Username or Password</div>
+                ));
+            } else if( err.message === "Request failed with status code 500" ) {
+                this.props.openDefaultBlackModal(() => (
+                    <div style={{fontSize: "3rem"}}>Request Could Not Reach Server</div>
+                ));
+            }
+            console.log(err);
+        });
     }
     
     render() {
@@ -52,4 +70,4 @@ class SignIn extends React.Component {
     }
 }
 
-export default withAuth(SignIn);
+export default withAuth(withModal(SignIn));

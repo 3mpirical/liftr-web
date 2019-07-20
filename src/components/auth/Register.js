@@ -16,6 +16,7 @@ class Register extends React.Component {
 
     handleSubmit = (event) => {
         const { name, email, password, passwordConfirmation } = this.state;
+        const { history, setUser, openDefaultBlackModal } = this.props;
         event.preventDefault();
         if(password !== passwordConfirmation) {
             return this.props.openDefaultBlackModal(() =>(
@@ -23,7 +24,28 @@ class Register extends React.Component {
             ));
         } 
 
-        this.props.handleRegister({name, email, password}, this.props.history);
+        this.props.handleRegister({name, email, password})
+        .then((res) => {
+            this.setState({ user: res.data.data });
+            history.push("/");
+        })
+        .catch((err) => {
+            if(err.message === "Request failed with status code 422") {
+                this.props.openDefaultBlackModal(() => (
+                    <>
+                        <p style={{fontSize: "3rem"}}>Invalid Email Format</p>
+                        <p style={{fontSize: "3rem"}}>Make sure you include the domain</p>
+                        <p style={{fontSize: "3rem"}}>( Example: .net .com .org )</p>
+                    </>
+                ));
+            } else if( err.message === "Request failed with status code 500" ) {
+                this.props.openDefaultBlackModal(() => (
+                    <p style={{fontSize: "3rem"}}>Request Could Not Reach Server</p>
+                ));
+            }
+
+            console.log(JSON.stringify(err, null, 2));
+        })
     }
     
     render() {
