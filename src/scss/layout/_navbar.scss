@@ -20,9 +20,9 @@
         justify-content: space-between;
     }
 
-    &__button {
+    &__button-left {
         border-radius: 0;
-        border-left: 1px solid $color-white;
+        border-right: 1px solid $color-white;
         padding: 0.1rem 1rem;
         background-color: transparent;
         font-size: 1.4rem;
@@ -37,9 +37,30 @@
             color: $color-background-dark;
         }
 
+        &:last-of-type {
+            border-right: none;
+        }
+    }
+
+    &__button-right {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        padding: 0.4rem 0.75rem;
+        font-size: 1.5rem;
+        outline: none;
+
         &:first-of-type {
             border-left: none;
         }
+    }
+
+    &__button-icon {
+        margin-left: 0.5rem;   
+    }
+
+    &__message-icon{ 
+        font-size: 1.65rem;
     }
 
     &__logo {

@@ -118,20 +118,33 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-  .navbar__button {
+  .navbar__button-left {
     border-radius: 0;
-    border-left: 1px solid #CFD8DC;
+    border-right: 1px solid #CFD8DC;
     padding: 0.1rem 1rem;
     background-color: transparent;
     font-size: 1.4rem;
     outline: none; }
-    .navbar__button:hover {
+    .navbar__button-left:hover {
       background-color: rgba(255, 255, 255, 0.1); }
-    .navbar__button:active {
+    .navbar__button-left:active {
       background-color: #CFD8DC;
       color: #11171a; }
-    .navbar__button:first-of-type {
+    .navbar__button-left:last-of-type {
+      border-right: none; }
+  .navbar__button-right {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 1.5rem;
+    outline: none; }
+    .navbar__button-right:first-of-type {
       border-left: none; }
+  .navbar__button-icon {
+    margin-left: 0.5rem; }
+  .navbar__message-icon {
+    font-size: 1.65rem; }
   .navbar__logo {
     position: absolute;
     left: calc(50%);
@@ -222,13 +235,12 @@ a {
     align-items: center; }
     .tracker-nav__left button {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-right: 2rem;
-      font-size: 1.4rem;
+      margin-right: 1rem;
+      padding: 0.4rem 0.75rem;
+      font-size: 1.5rem;
       outline: none; }
   .tracker-nav__button-icon {
-    font-size: 1.6rem;
     margin-left: 0.5rem; }
   .tracker-nav__right {
     display: flex;
