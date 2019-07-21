@@ -1,6 +1,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import moment from "moment";
 import { FaAngleLeft } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa";
 import { FaChartLine } from "react-icons/fa";
@@ -37,6 +38,7 @@ const TrackerNav = ({ currentDate, changeCurrentDate, selected, setSelected, dat
             <div className="tracker-nav__right">
                 <FaAngleLeft 
                     className="tracker-nav__angle"
+                    onClick={() => changeCurrentDate(moment(currentDate.date).subtract(1, "days"))}
                 />
                 { currentDate &&
                     <DatePicker 
@@ -49,6 +51,7 @@ const TrackerNav = ({ currentDate, changeCurrentDate, selected, setSelected, dat
                 }
                 <FaAngleRight 
                     className="tracker-nav__angle"
+                    onClick={() => changeCurrentDate(moment(currentDate.date).add(1, "days"))}
                 />
             </div>
         </div>
