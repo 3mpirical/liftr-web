@@ -107,6 +107,8 @@
         border: none;
         font-size: inherit;
         text-align: center;
+
+        &:focus { background-color: transparent; }
     }
 
     &__rpe {

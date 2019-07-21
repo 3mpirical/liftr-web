@@ -437,6 +437,8 @@ a {
     border: none;
     font-size: inherit;
     text-align: center; }
+    .rep-scheme__weight:focus, .rep-scheme__reps:focus, .rep-scheme__rpe:focus {
+      background-color: transparent; }
   .rep-scheme__rpe {
     width: 1rem;
     color: #00b2c2;
