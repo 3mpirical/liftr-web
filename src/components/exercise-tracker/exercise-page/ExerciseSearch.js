@@ -180,7 +180,7 @@ const ExerciseSearch = ({
 
 const style = {
     selectedButton: {
-        color: "black",
+        color: "#CFD8DC",
         borderColor: "transparent",
         backgroundColor: "#303F9F",
     }

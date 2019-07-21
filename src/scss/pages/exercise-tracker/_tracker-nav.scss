@@ -16,8 +16,18 @@
         align-items: center; 
 
         button {
-            margin-right: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 2rem;
+            font-size: 1.4rem;
+            outline: none;
         }
+    }
+
+    &__button-icon {
+        font-size: 1.6rem;
+        margin-left: 0.5rem;
     }
 
     &__right {
@@ -35,14 +45,22 @@
         border-radius: $border-radius;
         text-align: center;
         font-size: 2rem;
+        transition-duration: 0.1s;
+        cursor: pointer;
+        
+        &:hover{ background-color: $color-background-light; }
+        &:focus { background-color: $color-background-light; }
+    }
+    
+    &__angle {
+        font-size: 2rem;
+        background-color: $color-background;
+        border-radius: $border-radius;
+        margin-left: 1rem;
+        transition-duration: 0.1s;
         cursor: pointer;
 
-        &:hover{ 
-            background-color: $color-background-light; 
-        }
-        
-        &:focus {
-            background-color: $color-background-light; 
-        }
+        &:first-of-type { margin-right: 1rem }
+        &:hover{ background-color: $color-background-light; }
     }
 }

@@ -221,7 +221,15 @@ a {
     justify-content: space-between;
     align-items: center; }
     .tracker-nav__left button {
-      margin-right: 1.5rem; }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 2rem;
+      font-size: 1.4rem;
+      outline: none; }
+  .tracker-nav__button-icon {
+    font-size: 1.6rem;
+    margin-left: 0.5rem; }
   .tracker-nav__right {
     display: flex;
     justify-content: space-between;
@@ -235,10 +243,22 @@ a {
     border-radius: 2.5px;
     text-align: center;
     font-size: 2rem;
+    transition-duration: 0.1s;
     cursor: pointer; }
     .tracker-nav__date:hover {
       background-color: #455A64; }
     .tracker-nav__date:focus {
+      background-color: #455A64; }
+  .tracker-nav__angle {
+    font-size: 2rem;
+    background-color: #263238;
+    border-radius: 2.5px;
+    margin-left: 1rem;
+    transition-duration: 0.1s;
+    cursor: pointer; }
+    .tracker-nav__angle:first-of-type {
+      margin-right: 1rem; }
+    .tracker-nav__angle:hover {
       background-color: #455A64; }
 
 .exercises-page {
