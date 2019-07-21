@@ -33,10 +33,44 @@
     height: 100%;
     background-color: $color-background-dark;
     overflow-y: auto;
+    border-right: 1px solid $color-background-light;
     
     &__search-input {
         width: 100%;
         background-color: $color-background-light;
+        border-bottom: none;
+        &::placeholder { text-align: center; }
+    }
+
+    &__bodypart-filters,
+    &__kind-filters, {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        border-bottom: 1px solid $color-background;
+    }
+
+    &__bodypart-filters { 
+        padding-bottom: 0;
+        border-bottom: none; 
+    }
+
+    &__kind-filters { display: none; }
+
+    &__bodypart, 
+    &__kind {
+        margin: 0.5rem;
+        padding: 0.15rem 0.5rem;
+        font-size: 1.25rem;
+        background-color: transparent;
+        border: 1px solid $color-background-light;
+        border-radius: 5px;
+        color: $color-background-light;
+        outline: none;
+
+        &:hover { background-color: rgba($color-background, 0.5) }
     }
 }
 
@@ -48,7 +82,7 @@
     height: 7.5rem;
     cursor: pointer;
     transition-duration: 0.2s;
-    transform: scale(0.95, 0.85) translateX(-2.5%);
+    transform: scale(0.95, 0.9);
     animation: fade-in 0.2s ease-in;
 
     &__image {
