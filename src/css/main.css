@@ -317,13 +317,20 @@ a {
   .exercise-search__results-container {
     height: calc(100% - 15rem);
     overflow-y: scroll; }
+  .exercise-search__paginate-button {
+    height: 7.5rem;
+    width: 100%;
+    background-color: #00838F;
+    transform: scale(0.95, 0.9);
+    font-size: 2.25rem; }
 
 .exercise-search-result {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #263238;
   height: 7.5rem;
+  background-color: #263238;
+  border-radius: 2.5px;
   cursor: pointer;
   transition-duration: 0.2s;
   transform: scale(0.95, 0.9);

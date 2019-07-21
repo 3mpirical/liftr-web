@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import ExerciseSearchResult from "./ExerciseSearchResult";
 import { FaRegTimesCircle } from "react-icons/fa";
@@ -15,20 +15,53 @@ const ExerciseSearch = ({
     const [timer, setTimer] = useState(null);
     const [exercises, setExercises] = useState([]);
     const [kindOpen, setKindOpen] = useState(false);
+    const [offset, setOffset] = useState(0);
+    const [limit, setLimit] = useState(20);
+    const [noMoreExercises, setNoMoreExercises] = useState(false);
+    const [initialSearch, setInitialsearch] = useState(true);
+    const firstRender = useRef(true);
 
     useEffect(() => {
         clearTimeout(timer);
-        const route = `/api/exercises/search?`;
-        const termParam =  `${term ? "term=" + term : ""}`;
-        const bodyPartParam = `${bodyPartFilter ? "&body_part=" + bodyPartFilter : ""}`;
-        const kindParam = `${kindFilter ? "&kind=" + kindFilter : ""}`;
+
+        // reseting values for new searches
+        // initial search prevents offset change from firing pagination search
+        setInitialsearch(true);
+        setOffset(0);
 
         setTimer(setTimeout(function () {
-            axios.get(route + termParam + bodyPartParam + kindParam)
-            .then((res) => setExercises(res.data))
+            searchRequest(term, bodyPartFilter, kindFilter, 0)
+            .then((res) => {
+                if(res.data.length < limit) setNoMoreExercises(true);
+                else(setNoMoreExercises(false));
+                setExercises(res.data);
+                setInitialsearch(false);
+            })
             .catch(console.log);
         }, 500));
     }, [term, bodyPartFilter, kindFilter]);
+
+    useEffect(() => {
+        if(firstRender.current) firstRender.current = false;
+        else if(!initialSearch) {
+            searchRequest(term, bodyPartFilter, kindFilter, offset)
+            .then((res) => {
+                if(res.data.length < limit) setNoMoreExercises(true);
+                setExercises(exercises.concat(res.data));
+            })
+            .catch(console.log);
+        }
+    }, [offset]);
+
+    const searchRequest = (term, bodyPart, kind, offset) => {
+        const route = `/api/exercises/search?`;
+        const termParam =  `${term ? "term=" + term : ""}`;
+        const bodyPartParam = `${bodyPart ? "&body_part=" + bodyPart : ""}`;
+        const kindParam = `${kind ? "&kind=" + kind : ""}`;
+        const offsetParam = `&offset=${offset}`;
+
+        return axios.get(route + termParam + bodyPartParam + kindParam + offsetParam);
+    }
 
     const handleChange = (event) => {
         setTerm(event.target.value);
@@ -134,6 +167,11 @@ const ExerciseSearch = ({
             </div>
             <div className="exercise-search__results-container">
                 { exercises && renderResults() }
+                <button
+                    onClick={() => noMoreExercises ? null : setOffset(offset + 1)}
+                    className="exercise-search__paginate-button">
+                    { noMoreExercises ? "No More Exercises" : "See More" }
+                </button>
             </div>
         </div>
     );

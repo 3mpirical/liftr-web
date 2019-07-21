@@ -100,7 +100,7 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
                         className="rep-scheme__comment-btn"
                         style={ comment? {color: "#F57C00"} : null}
                         onClick={() => setCommentOpen(!commentOpen)}
-                    >Comment</button>
+                        >Comment</button>
                     <button className="rep-scheme__history-btn">History</button>
                 </div>
                 <FaRegTimesCircle 
