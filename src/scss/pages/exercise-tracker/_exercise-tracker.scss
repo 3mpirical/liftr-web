@@ -1,6 +1,7 @@
 
 .tracker {
     @include screen;
+    overflow: hidden;
     
     &__page-container {
         height: calc(100% - 4rem);

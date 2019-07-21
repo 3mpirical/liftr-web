@@ -132,7 +132,9 @@ const ExerciseSearch = ({
                     None
                 </button>
             </div>
-            { exercises && renderResults() }
+            <div className="exercise-search__results-container">
+                { exercises && renderResults() }
+            </div>
         </div>
     );
 };

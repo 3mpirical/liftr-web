@@ -32,7 +32,6 @@
     width: 30rem;
     height: 100%;
     background-color: $color-background-dark;
-    overflow-y: auto;
     border-right: 1px solid $color-background-light;
     
     &__search-input {
@@ -91,6 +90,11 @@
         outline: none;
 
         &:hover { background-color: rgba($color-background, 0.5) }
+    }
+
+    &__results-container {
+        height: calc(100% - 15rem);
+        overflow-y: scroll;
     }
 }
 
