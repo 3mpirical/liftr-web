@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../state/AuthContext";
 import { withRouter } from "react-router-dom";
+import { FaCommentDots } from "react-icons/fa";
 
 const Navbar = ({ history }) => {
     const auth = useContext(AuthContext);
@@ -9,18 +10,16 @@ const Navbar = ({ history }) => {
         <nav className="navbar">
             <div className="navbar__left">
                 { auth.authenticated 
-                ? <button 
+                && <button 
                     className="navbar__button" 
                     onClick={() => auth.handleLogout(history)}>
                     Logout
                   </button>
-                : null 
                 }
-                { auth.authenticated 
-                ? <button className="navbar__button" >
-                    Settings
+                { auth.authenticated
+                && <button className="navbar__button" >
+                    { auth.user.name }
                   </button>
-                : null 
                 }
             </div>
             
@@ -31,13 +30,13 @@ const Navbar = ({ history }) => {
                     Tracker
                 </button>
                 <button className="navbar__button">
+                    Challenges
+                </button>
+                <button className="navbar__button">
                     Boards
                 </button>
-                <button className="navbar__button">
-                    Messages
-                </button>
-                <button className="navbar__button">
-                    Challenges
+                <button className="navbar__icon">
+                    <FaCommentDots />
                 </button>
             </div>
         </nav>

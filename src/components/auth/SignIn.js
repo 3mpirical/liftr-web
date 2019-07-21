@@ -19,7 +19,7 @@ class SignIn extends React.Component {
         event.preventDefault();
         handleLogin(this.state)
         .then((res) => {
-            setUser(res.data);
+            setUser(res.data.data);
             this.props.history.push("/");
         })
         .catch((err) => {
