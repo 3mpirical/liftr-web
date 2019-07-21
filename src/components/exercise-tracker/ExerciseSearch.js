@@ -1,27 +1,34 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ExerciseSearchResult from "./ExerciseSearchResult";
+import { FaRegTimesCircle } from "react-icons/fa";
 
 
-const ExerciseSearch = ({ createRepScheme, bodyPartFilter, setBodyPartFilter }) => {
+const ExerciseSearch = ({ 
+    createRepScheme, 
+    bodyPartFilter, 
+    setBodyPartFilter, 
+    kindFilter, 
+    setKindFilter }) => {
+
     const [term, setTerm] = useState("");
     const [timer, setTimer] = useState(null);
     const [exercises, setExercises] = useState([]);
+    const [kindOpen, setKindOpen] = useState(false);
 
     useEffect(() => {
         clearTimeout(timer);
         const route = `/api/exercises/search?`;
         const termParam =  `${term ? "term=" + term : ""}`;
-        const bodyPartParam = `${bodyPartFilter ? "&body_part=" + bodyPartFilter : ""}`
-
-        console.log(route + termParam + bodyPartParam);
+        const bodyPartParam = `${bodyPartFilter ? "&body_part=" + bodyPartFilter : ""}`;
+        const kindParam = `${kindFilter ? "&kind=" + kindFilter : ""}`;
 
         setTimer(setTimeout(function () {
-            axios.get(route + termParam + bodyPartParam)
+            axios.get(route + termParam + bodyPartParam + kindParam)
             .then((res) => setExercises(res.data))
             .catch(console.log);
         }, 500));
-    }, [term, bodyPartFilter]);
+    }, [term, bodyPartFilter, kindFilter]);
 
     const handleChange = (event) => {
         setTerm(event.target.value);
@@ -47,16 +54,34 @@ const ExerciseSearch = ({ createRepScheme, bodyPartFilter, setBodyPartFilter }) 
                 name="term"
                 onChange={handleChange}
             />
-            <div className="exercise-search__kind-filters">
-                <button 
-                    className="exercise-search__kind">
-                    Weight
+            { kindOpen
+              ? <div className="exercise-search__kind-filters">
+                    <button 
+                        style={kindFilter === "weight" ? style.selectedButton : null}
+                        onClick={() => setKindFilter("weight")}
+                        className="exercise-search__kind">
+                        Weight
+                    </button>
+                    <button 
+                        style={kindFilter === "distance" ? style.selectedButton : null}
+                        onClick={() => setKindFilter("distance")}
+                        className="exercise-search__kind">
+                        Distance
+                    </button>
+                    <FaRegTimesCircle 
+                        className="exercise-search__kind-filters-close"
+                        onClick={() => {
+                            setKindFilter(null)
+                            setKindOpen(false)
+                        }}
+                    />
+                </div>
+              : <button 
+                    className="exercise-search__kind-toggle"
+                    onClick={() => setKindOpen(true)}>
+                  + Exercise Type Filter
                 </button>
-                <button 
-                    className="exercise-search__kind">
-                    Distance
-                </button>
-            </div>
+            }
             <div className="exercise-search__bodypart-filters">
                 <button 
                     style={bodyPartFilter === "back" ? style.selectedButton : null}

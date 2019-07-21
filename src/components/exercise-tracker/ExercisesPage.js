@@ -10,6 +10,7 @@ const ExercisesPage = ({
     updateComment,
     }) => {
     const [bodyPartFilter, setBodyPartFilter] = useState(null);
+    const [kindFilter, setKindFilter] = useState(null);
 
     const renderRepSchemes = () => {
         return repSchemes.map((repScheme) => {
@@ -29,6 +30,8 @@ const ExercisesPage = ({
                 createRepScheme={createRepScheme}
                 bodyPartFilter={bodyPartFilter}
                 setBodyPartFilter={setBodyPartFilter} 
+                kindFilter={kindFilter}
+                setKindFilter={setKindFilter}
             />
             <div className="exercises-page__rep-schemes-overflow-container">
                 <div className="exercises-page__rep-schemes-container">

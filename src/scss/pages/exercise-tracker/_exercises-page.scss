@@ -42,8 +42,30 @@
         &::placeholder { text-align: center; }
     }
 
+    &__kind-toggle {
+        height: 2.5rem;
+        width: 100%;
+        color: $color-background-light;
+        background-color: transparent;
+        border-bottom: 1px solid $color-background;
+        border-radius: 0;
+        font-size: 1.4rem;
+
+        &:hover { background-color: $color-background; }
+    }
+
+    &__kind-filters-close {
+        position: absolute;
+        top: 0.2rem;
+        right: 0.2rem;
+        font-size: 1.2rem;
+        color: $color-background-light;
+        cursor: pointer;
+    }
+
     &__bodypart-filters,
     &__kind-filters, {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -56,8 +78,6 @@
         padding-bottom: 0;
         border-bottom: none; 
     }
-
-    &__kind-filters { display: none; }
 
     &__bodypart, 
     &__kind {

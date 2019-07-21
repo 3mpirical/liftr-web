@@ -275,7 +275,25 @@ a {
     border-bottom: none; }
     .exercise-search__search-input::placeholder {
       text-align: center; }
+  .exercise-search__kind-toggle {
+    height: 2.5rem;
+    width: 100%;
+    color: #455A64;
+    background-color: transparent;
+    border-bottom: 1px solid #263238;
+    border-radius: 0;
+    font-size: 1.4rem; }
+    .exercise-search__kind-toggle:hover {
+      background-color: #263238; }
+  .exercise-search__kind-filters-close {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    font-size: 1.2rem;
+    color: #455A64;
+    cursor: pointer; }
   .exercise-search__bodypart-filters, .exercise-search__kind-filters {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -285,8 +303,6 @@ a {
   .exercise-search__bodypart-filters {
     padding-bottom: 0;
     border-bottom: none; }
-  .exercise-search__kind-filters {
-    display: none; }
   .exercise-search__bodypart, .exercise-search__kind {
     margin: 0.5rem;
     padding: 0.15rem 0.5rem;
