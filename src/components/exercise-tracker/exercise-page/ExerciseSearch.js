@@ -59,8 +59,9 @@ const ExerciseSearch = ({
         const bodyPartParam = `${bodyPart ? "&body_part=" + bodyPart : ""}`;
         const kindParam = `${kind ? "&kind=" + kind : ""}`;
         const offsetParam = `&offset=${offset}`;
+        const limitParam = `&limit=${limit}`
 
-        return axios.get(route + termParam + bodyPartParam + kindParam + offsetParam);
+        return axios.get(route + termParam + bodyPartParam + kindParam + offsetParam + limitParam);
     }
 
     const handleChange = (event) => {
