@@ -5,7 +5,7 @@ const ExerciseSearchResult = ({ exercise, createRepScheme }) => {
     return (
         <div className="exercise-search-result" onClick={() => createRepScheme(exercise)} >
             <img 
-                src={require("../../images/fitness-generic.jpg")} 
+                src={require("../../../images/fitness-generic.jpg")} 
                 alt="bodypart thumbnail" 
                 className="exercise-search-result__image"
             />

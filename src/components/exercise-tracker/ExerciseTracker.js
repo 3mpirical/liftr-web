@@ -3,7 +3,7 @@ import moment from "moment";
 import axios from "axios";
 import { AuthContext } from "../../state/AuthContext";
 import TrackerNav from "./TrackerNav";
-import ExercisesPage from "./ExercisesPage";
+import ExercisesPage from "./exercise-page/ExercisesPage";
 
 
 const ExerciseTracker = ({  }) => {
