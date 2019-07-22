@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FaRegTimesCircle } from "react-icons/fa";
 
 
-const ExerciseHistory = ({ exercise_id }) => {
+const ExerciseHistory = ({ exercise_id, closeBlackModal }) => {
     const [repSchemes, setRepSchemes] = useState([]);
     const [limit, setlimit] = useState(10);
 
@@ -17,28 +18,40 @@ const ExerciseHistory = ({ exercise_id }) => {
 
     const renderWorkSets = (workSets) => (
         workSets.map(({weight, reps, rpe, id}) => (
-            <div className="exercise-history__workset" key={id} >
-                <p>weight: { weight ? weight : "none" }</p>
-                <p>reps: { reps ? reps : "none" }</p>
-                <p>rpe: { rpe ? rpe : "none" }</p>
-                <hr/>
-            </div>
+            <tr className="exercise-history__workset" key={id} >
+                <td>{ weight ? weight : "none" }</td>
+                <p className="exercise-history__workset__times" >X</p>
+                <td>{ reps ? reps : "none" }</td>
+                <td className="exercise-history__workset__rpe" >{ rpe ? rpe : "none" }</td>
+            </tr>
         ))
     );
 
     const renderRepSchemes = () => {
         return repSchemes.map((repScheme) => (
             <div className="exercise-history__rep-scheme" key={repScheme.id}>
-                <p>{ repScheme.exercise_name }</p>
-                <p>{ repScheme.date }</p>
-                <hr/>
-                { renderWorkSets(repScheme.work_sets) }
+                <div className="exercise-history__rep-scheme-heading">
+                    <h3>{ repScheme.exercise_name }</h3>
+                    <p>{ repScheme.date }</p>
+                </div>
+                <table className="exercise-history__table">
+                    <tr className="exercise-history__labels">
+                        <th>weight</th>
+                        <th>reps</th>
+                        <th className="exercise-history__labels--rpe" >RPE</th>
+                    </tr>
+                    { renderWorkSets(repScheme.work_sets) }
+                </table>
             </div>
         ))
     }
 
     return (
         <div className="exercise-history">
+            <h1 className="exercise-history__title">History</h1>
+            <FaRegTimesCircle 
+                className="exercise-history__close"
+                onClick={() => closeBlackModal()}/>
             { repSchemes.length > 0 && renderRepSchemes() }
         </div>
     );

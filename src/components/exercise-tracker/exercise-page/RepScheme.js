@@ -8,7 +8,7 @@ import { FaRegTimesCircle } from "react-icons/fa";
 
 const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) => {
     const { comment, exercise_name, id } = repScheme;
-    const { openBlackModal } = useContext(ModalContext);
+    const { openBlackModal, closeBlackModal } = useContext(ModalContext);
 
     const [workSets, setWorkSets] = useState([]);
     const [commentOpen, setCommentOpen] = useState(false);
@@ -97,6 +97,7 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
         openBlackModal(() => (
             <ExerciseHistory 
                 exercise_id={repScheme.exercise_id}
+                closeBlackModal={closeBlackModal}
             />
          ))
     }

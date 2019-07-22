@@ -77,6 +77,8 @@ class ModalProvider extends React.Component {
                 ...this.state,
                 openBlackModal: this.openBlackModal,
                 openDefaultBlackModal: this.openDefaultBlackModal,
+                closeBlackModal: this.closeBlackModal,
+                closeDefaultBlackModal: this.closeDefaultBlackModal,
             }} >
                 { blackModalOpen 
                     && <ModalBlack 
