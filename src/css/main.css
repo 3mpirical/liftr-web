@@ -497,6 +497,22 @@ a {
       color: #CFD8DC;
       background-color: transparent; }
 
+.exercise-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100rem;
+  padding: 3rem;
+  margin-bottom: 10rem;
+  background-color: #11171a;
+  border-radius: 2.5px; }
+  .exercise-history__rep-scheme {
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 2.5px;
+    background-color: #263238; }
+
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -547,9 +563,10 @@ a {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 10rem;
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    padding-top: 10rem;
+    overflow: auto; }
   .modal__default-prompt {
     position: relative;
     background-color: #263238;

@@ -10,9 +10,10 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        padding-top: 10rem;
         height: 100%;
         width: 100%;
+        padding-top: 10rem;
+        overflow: auto;
     }
     
     &__default-prompt {

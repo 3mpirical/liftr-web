@@ -1,11 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import axios from "axios";
 import WorkSet from "./WorkSet";
+import ExerciseHistory from "./ExerciseHistory";
+import { ModalContext } from "../../../state/ModalContext";
 import { FaRegTimesCircle } from "react-icons/fa";
 
 
 const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) => {
     const { comment, exercise_name, id } = repScheme;
+    const { openBlackModal } = useContext(ModalContext);
 
     const [workSets, setWorkSets] = useState([]);
     const [commentOpen, setCommentOpen] = useState(false);
@@ -90,6 +93,14 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
         ))
     }
 
+    const openExerciseHistory = () => {
+        openBlackModal(() => (
+            <ExerciseHistory 
+                exercise_id={repScheme.exercise_id}
+            />
+         ))
+    }
+
 
     return (
         <div className="rep-scheme" key={id} >
@@ -101,7 +112,11 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
                         style={ comment? {color: "#F57C00"} : null}
                         onClick={() => setCommentOpen(!commentOpen)}
                         >Comment</button>
-                    <button className="rep-scheme__history-btn">History</button>
+                    <button 
+                        className="rep-scheme__history-btn"
+                        onClick={() => openExerciseHistory()} >
+                            History
+                    </button>
                 </div>
                 <FaRegTimesCircle 
                     className="rep-scheme__delete"
