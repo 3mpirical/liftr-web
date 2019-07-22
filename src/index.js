@@ -9,7 +9,7 @@ import { ModalProvider } from "./state/ModalContext";
 import { initMiddleware } from "devise-axios";
 import axios from "axios";
 
-axios.defaults.proxy.host = "https://guarded-lake-89057.herokuapp.com/"
+axios.defaults.baseURL = "https://guarded-lake-89057.herokuapp.com/"
 
 initMiddleware();
 
