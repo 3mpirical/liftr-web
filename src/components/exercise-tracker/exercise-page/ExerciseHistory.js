@@ -19,10 +19,10 @@ const ExerciseHistory = ({ exercise_id, closeBlackModal }) => {
     const renderWorkSets = (workSets) => (
         workSets.map(({weight, reps, rpe, id}) => (
             <tr className="exercise-history__workset" key={id} >
-                <td>{ weight ? weight : "none" }</td>
-                <p className="exercise-history__workset__times" >X</p>
-                <td>{ reps ? reps : "none" }</td>
-                <td className="exercise-history__workset__rpe" >{ rpe ? rpe : "none" }</td>
+                <td>{ weight ? weight : "-" }</td>
+                <td className="exercise-history__workset__times" >X</td>
+                <td>{ reps ? reps : "-" }</td>
+                <td className="exercise-history__workset__rpe" >{ rpe ? rpe : "-" }</td>
             </tr>
         ))
     );
@@ -35,12 +35,14 @@ const ExerciseHistory = ({ exercise_id, closeBlackModal }) => {
                     <p>{ repScheme.date }</p>
                 </div>
                 <table className="exercise-history__table">
-                    <tr className="exercise-history__labels">
-                        <th>weight</th>
-                        <th>reps</th>
-                        <th className="exercise-history__labels--rpe" >RPE</th>
-                    </tr>
-                    { renderWorkSets(repScheme.work_sets) }
+                    <tbody>
+                        <tr className="exercise-history__labels">
+                            <th>weight</th>
+                            <th>reps</th>
+                            <th className="exercise-history__labels--rpe" >RPE</th>
+                        </tr>
+                        { renderWorkSets(repScheme.work_sets) }
+                    </tbody>
                 </table>
             </div>
         ))
@@ -48,7 +50,7 @@ const ExerciseHistory = ({ exercise_id, closeBlackModal }) => {
 
     return (
         <div className="exercise-history">
-            <h1 className="exercise-history__title">History</h1>
+            <h1 className="exercise-history__title">HISTORY</h1>
             <FaRegTimesCircle 
                 className="exercise-history__close"
                 onClick={() => closeBlackModal()}/>

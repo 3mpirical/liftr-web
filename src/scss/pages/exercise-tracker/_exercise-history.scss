@@ -3,15 +3,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100rem;
+    width: 90rem;
     padding: 3rem;
     margin-bottom: 10rem;
     background-color: $color-background-dark;
     border-radius: $border-radius;
 
     &__title {
+        width: 100%;
+        margin-bottom: 2rem;
+        padding-left: 2rem;
         color: $color-primary;
-        font-size: 5rem;
+        font-size: 6rem;
+        border-bottom: 5px solid $color-primary;
     }
 
     &__close {
@@ -19,6 +23,7 @@
         top: 1rem;
         right: 1rem;
         color: $color-background-light;
+        font-size: 3rem;
         cursor: pointer;
     }
 
@@ -32,9 +37,7 @@
         background-color: $color-background;
     } 
 
-    &__table {
-        width: 100%;
-    }
+    &__table { width: 100%; }
 
     &__rep-scheme-heading {
         display: flex;
@@ -45,7 +48,7 @@
 
         h3 {
             font-family: $font-normal;
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: $color-primary-light;
         }
 
@@ -53,6 +56,7 @@
             padding: 0.5rem 1rem;
             background-color: $color-background-light;
             border-radius: $border-radius;
+            font-size: 2rem;
         }
     }
 
@@ -61,12 +65,12 @@
         justify-content: space-around;
         align-items: center;
         padding: 1rem 0;
-        border-top: 2px solid $color-primary;
-        border-bottom: 2px solid $color-primary;
-        font-size: 2rem;
+        border-radius: $border-radius;
+        background-color: $color-primary;
+        font-size: 2.25rem;
 
         td { text-align: center }
-        &--rpe { color: $color-secondary; }
+        &--rpe { color: $color-secondary-light; }
     }
 
     &__workset {
@@ -76,13 +80,13 @@
         align-items: center;
         border-bottom: 1px solid $color-background-light;
         padding: 1rem 0;
-        font-size: 1.8rem;
+        font-size: 2rem;
 
-        &__rpe { color: $color-secondary; }
+        &__rpe { color: $color-secondary-light; }
         &__times {
             position: absolute;
             transform: translateX(-50%);
-            left: 33%;
+            left: calc(100% / 3);
         }
     }
 }
