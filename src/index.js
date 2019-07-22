@@ -7,9 +7,6 @@ import App from './App';
 import { AuthProvider } from "./state/AuthContext";
 import { ModalProvider } from "./state/ModalContext";
 import { initMiddleware } from "devise-axios";
-import axios from "axios";
-
-axios.defaults.baseURL = "https://guarded-lake-89057.herokuapp.com/"
 
 initMiddleware();
 
