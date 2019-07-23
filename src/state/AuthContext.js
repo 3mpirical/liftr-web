@@ -1,6 +1,5 @@
 import React from 'react';
-import axios from '../helpers/axios';
-import {ModalBlack} from "./ModalContext";
+import axios from '../helpers/Axios';
 
 
 const AuthContext = React.createContext();
