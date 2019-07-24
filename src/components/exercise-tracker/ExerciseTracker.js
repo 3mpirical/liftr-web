@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import moment from "moment";
-import axios from "../../helpers/axios";
+import axios from "axios";
 import { AuthContext } from "../../state/AuthContext";
 import TrackerNav from "./TrackerNav";
 import ExercisesPage from "./exercise-page/ExercisesPage";

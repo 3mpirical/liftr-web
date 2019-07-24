@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "../../../helpers/axios";
+import axios from "axios";
 import ExerciseSearchResult from "./ExerciseSearchResult";
 import { FaRegTimesCircle } from "react-icons/fa";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from '../helpers/axios';
+import axios from 'axios';
 
 
 const AuthContext = React.createContext();

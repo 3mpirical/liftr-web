@@ -6,6 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 import App from './App';
 import { AuthProvider } from "./state/AuthContext";
 import { ModalProvider } from "./state/ModalContext";
+import axios from "axios";
+import { initMiddleware } from "devise-axios";
+
+axios.defaults.baseURL = 'https://liftr-server.herokuapp.com/'
+// axios.defaults.baseURL = "http://localhost:3005/"
+
+initMiddleware();
 
 
 ReactDOM.render(

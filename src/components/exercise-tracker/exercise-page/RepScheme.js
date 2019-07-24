@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import axios from "../../../helpers/axios";
+import axios from "axios";
 import WorkSet from "./WorkSet";
 import ExerciseHistory from "./ExerciseHistory";
 import { ModalContext } from "../../../state/ModalContext";
