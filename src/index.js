@@ -6,9 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from './App';
 import { AuthProvider } from "./state/AuthContext";
 import { ModalProvider } from "./state/ModalContext";
-import { initMiddleware } from "devise-axios";
 
-initMiddleware();
 
 ReactDOM.render(
     <AuthProvider>
