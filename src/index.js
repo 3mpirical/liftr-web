@@ -9,8 +9,11 @@ import { ModalProvider } from "./state/ModalContext";
 import axios from "axios";
 import { initMiddleware } from "devise-axios";
 
-axios.defaults.baseURL = 'https://liftr-server.herokuapp.com/'
-// axios.defaults.baseURL = "http://localhost:3005/"
+if(process.env.ENV_PRODUCTION) {
+    axios.defaults.baseURL = 'https://liftr-server.herokuapp.com/'
+} else {
+    axios.defaults.baseURL = "http://localhost:3005/"
+}
 
 initMiddleware();
 
