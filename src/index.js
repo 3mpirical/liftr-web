@@ -9,8 +9,6 @@ import { ModalProvider } from "./state/ModalContext";
 import axios from "axios";
 import { initMiddleware } from "devise-axios";
 
-console.log(process.env.NODE_ENV);
-
 if(process.env.NODE_ENV === "production") {
     axios.defaults.baseURL = 'https://liftr-server.herokuapp.com/'
 } else {
