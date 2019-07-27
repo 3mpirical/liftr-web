@@ -51,12 +51,16 @@ const WorkSet = ({
     }, [reps]);
 
     const handleWeightChange = (event) => {
-        updateWorkSetState(workSet, "weight", event.target.value);
+        const newWeight = event.target.value;
+        if(newWeight > 999 || newWeight < -999) return;
+        updateWorkSetState(workSet, "weight", newWeight);
     }
 
 
     const handleRepsChange = (event) => {
-        updateWorkSetState(workSet, "reps", event.target.value);
+        const newReps = event.target.value;
+        if(newReps > 999 || newReps < 0) return;
+        else updateWorkSetState(workSet, "reps", newReps);
     }
 
     const handleRpeChange = (event) => {
