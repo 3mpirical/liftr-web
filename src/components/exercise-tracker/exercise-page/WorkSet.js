@@ -60,7 +60,9 @@ const WorkSet = ({
     }
 
     const handleRpeChange = (event) => {
-        updateWorkSetState(workSet, "rpe", event.target.value);
+        const newRpe = event.target.value;
+        if(newRpe > 10 || newRpe < 0) return;
+        else updateWorkSetState(workSet, "rpe", newRpe);
     }
 
 
@@ -90,6 +92,8 @@ const WorkSet = ({
                 name="rpe"
                 onChange={handleRpeChange}
                 placeholder="RPE"
+                min={0}
+                max={10}
             /> 
             {/* <button 
                 className="rep-scheme__work-set__delete" 
