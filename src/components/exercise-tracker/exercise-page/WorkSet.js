@@ -99,11 +99,6 @@ const WorkSet = ({
                 min={0}
                 max={10}
             /> 
-            {/* <button 
-                className="rep-scheme__work-set__delete" 
-                tabIndex="-1" 
-                onClick={() => deleteWorkSet(workSet)}
-                >X</button> */}
             <FaRegTimesCircle 
                 className="rep-scheme__work-set__delete" 
                 onClick={() => deleteWorkSet(workSet)}
