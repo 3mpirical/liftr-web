@@ -51,6 +51,7 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
                 reps: lastWorkSet? lastWorkSet.reps : null, 
                 rpe: lastWorkSet? lastWorkSet.rpe : null, 
                 distance: lastWorkSet? lastWorkSet.distance : null, 
+                distance_unit: lastWorkSet? lastWorkSet.distance_unit : null, 
             }
         ).then((res) => setWorkSets([...workSets, res.data]))
         .catch(console.log);

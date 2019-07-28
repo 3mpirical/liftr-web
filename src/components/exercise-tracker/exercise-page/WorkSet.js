@@ -14,7 +14,7 @@ const WorkSet = ({
     updateWorkSetState, 
     updateWorkSetRequest }) =>{
 
-    const { reps, weight, rpe, distance, id } = workSet;
+    const { reps, weight, rpe, distance, distance_unit, id } = workSet;
     const { exercise_kind } = repScheme;
 
     const inputObj = {
@@ -24,7 +24,12 @@ const WorkSet = ({
             <RpeInput rpe={rpe} handleRpeChange={handleRpeChange} />,
         ],
         distance: [
-            <DistanceInput distance={distance} handleDistanceChange={handleDistanceChange} />,
+            <DistanceInput 
+                distance={distance} 
+                handleDistanceChange={handleDistanceChange} 
+                distanceUnit={distance_unit} 
+                handleDistanceUnitChange={handleDistanceUnitChange} 
+            />,
             <RepsInput reps={reps} handleRepsChange={handleRepsChange} />,
             <RpeInput rpe={rpe} handleRpeChange={handleRpeChange} />,
         ]
@@ -34,6 +39,7 @@ const WorkSet = ({
     useTriggerWhenNotTyping(rpe, 500, () => updateWorkSetRequest(workSet, "rpe", rpe));
     useTriggerWhenNotTyping(reps, 500, () => updateWorkSetRequest(workSet, "reps", reps));
     useTriggerWhenNotTyping(distance, 500, () => updateWorkSetRequest(workSet, "distance", distance));
+    useTriggerWhenNotTyping(distance_unit, 500, () => updateWorkSetRequest(workSet, "distance_unit", distance_unit));
 
     function handleWeightChange(event) {
         const newWeight = event.target.value;
@@ -57,6 +63,16 @@ const WorkSet = ({
         const newDistance = event.target.value;
         if(newDistance > 999 || newDistance < 0) return;
         else updateWorkSetState(workSet, "distance", newDistance);
+    }
+
+    function handleDistanceUnitChange(event) {
+        const newDistanceUnit = event.target.value;
+        if( newDistanceUnit === "m" 
+        ||  newDistanceUnit === "km"
+        ||  newDistanceUnit === "ft"
+        ||  newDistanceUnit === "mi") {
+            updateWorkSetState(workSet, "distance_unit", newDistanceUnit);
+        } 
     }
 
     return (
