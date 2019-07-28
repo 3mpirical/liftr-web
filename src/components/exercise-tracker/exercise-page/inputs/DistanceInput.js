@@ -6,7 +6,7 @@ const DistanceInput = ({
     handleDistanceChange, 
     distanceUnit, 
     handleDistanceUnitChange }) => {
-        console.log(distanceUnit)
+        
     return (
         <>
             <input 
