@@ -41,7 +41,6 @@ const WorkSet = ({
         updateWorkSetState(workSet, "weight", newWeight);
     }
 
-
     function handleRepsChange(event) {
         const newReps = event.target.value;
         if(newReps > 999 || newReps < 0) return;
@@ -59,7 +58,6 @@ const WorkSet = ({
         if(newDistance > 999 || newDistance < 0) return;
         else updateWorkSetState(workSet, "distance", newDistance);
     }
-
 
     return (
         <div className="rep-scheme__work-set" key={id}>
