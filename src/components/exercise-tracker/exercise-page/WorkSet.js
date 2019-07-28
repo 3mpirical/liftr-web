@@ -4,6 +4,7 @@ import RpeInput from "./RpeInput";
 import RepsInput from "./RepsInput";
 import WeightInput from "./WeightInput";
 import DistanceInput from "./DistanceInput";
+import { useTriggerWhenNotTyping } from "../../utilities/useTriggerWhenNotTyping";
 
 
 const WorkSet = ({ 
@@ -29,58 +30,10 @@ const WorkSet = ({
         ]
     }
 
-    const [weightTimer, setWeightTimer] = useState(null);
-    const [repsTimer, setRepsTimer] = useState(null);
-    const [rpeTimer, setRpeTimer] = useState(null);
-    const [distanceTimer, setDistanceTimer] = useState(null);
-    let firstWeightRender = useRef(true);
-    let firstRepsRender = useRef(true);
-    let firstRpeRender = useRef(true);
-    let firstDistanceRender = useRef(true);
-
-    useEffect(() => {
-        if(firstWeightRender.current) firstWeightRender.current = false;
-        else {
-            clearTimeout(weightTimer);
-            
-            setWeightTimer(setTimeout(() => {
-                updateWorkSetRequest(workSet, "weight", weight);
-            }, 500));
-        }
-    }, [weight]);
-
-    useEffect(() => {
-        if(firstRpeRender.current) firstRpeRender.current = false;
-        else {
-            clearTimeout(rpeTimer);
-            
-            setRpeTimer(setTimeout(() => {
-                updateWorkSetRequest(workSet, "rpe", rpe);
-            }, 500));
-        }
-    }, [rpe]);
-
-    useEffect(() => {
-        if(firstRepsRender.current) firstRepsRender.current = false;
-        else {
-            clearTimeout(repsTimer);
-            
-            setRepsTimer(setTimeout(() => {
-                updateWorkSetRequest(workSet, "reps", reps);
-            }, 500));
-        }
-    }, [reps]);
-
-    useEffect(() => {
-        if(firstDistanceRender.current) firstDistanceRender.current = false;
-        else {
-            clearTimeout(distanceTimer);
-            
-            setDistanceTimer(setTimeout(() => {
-                updateWorkSetRequest(workSet, "distance", distance);
-            }, 500));
-        }
-    }, [distance]);
+    useTriggerWhenNotTyping(weight, 500, () => updateWorkSetRequest(workSet, "weight", weight));
+    useTriggerWhenNotTyping(rpe, 500, () => updateWorkSetRequest(workSet, "rpe", rpe));
+    useTriggerWhenNotTyping(reps, 500, () => updateWorkSetRequest(workSet, "reps", reps));
+    useTriggerWhenNotTyping(distance, 500, () => updateWorkSetRequest(workSet, "distance", distance));
 
     function handleWeightChange(event) {
         const newWeight = event.target.value;

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const DistanceInput = ({ distance, handleDistanceChange }) => {
+const DistanceInput = ({ distance, handleDistanceChange, }) => {
     return (
         <input 
             type="number" 
