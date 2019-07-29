@@ -5,6 +5,7 @@ import RepScheme from "./RepScheme";
 const ExercisesPage = ({ 
     repSchemes, 
     currentDate, 
+    changeCurrentDate,
     createRepScheme, 
     deleteRepScheme, 
     updateComment,
@@ -20,6 +21,7 @@ const ExercisesPage = ({
                     deleteRepScheme={deleteRepScheme}
                     updateComment={updateComment}
                     currentDate={currentDate}
+                    changeCurrentDate={changeCurrentDate}
                     />
         })
     }

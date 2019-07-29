@@ -48,11 +48,12 @@
             color: $color-primary-light;
         }
 
-        p {
-            padding: 0.5rem 1rem;
+        button {
+            // padding: 0.5rem 1rem;
             background-color: $color-background-light;
             border-radius: $border-radius;
             font-size: 2rem;
+            &:hover { background-color: lighten($color-background-light, 10%); }
         }
     }
 

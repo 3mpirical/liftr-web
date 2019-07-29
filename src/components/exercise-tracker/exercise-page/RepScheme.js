@@ -6,7 +6,7 @@ import { ModalContext } from "../../../state/ModalContext";
 import { FaRegTimesCircle } from "react-icons/fa";
 
 
-const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) => {
+const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate, changeCurrentDate }) => {
     const { comment, exercise_name, id } = repScheme;
     const { openBlackModal, closeBlackModal } = useContext(ModalContext);
 
@@ -103,6 +103,7 @@ const RepScheme = ({ repScheme, deleteRepScheme, updateComment, currentDate }) =
             <ExerciseHistory 
                 exercise_id={repScheme.exercise_id}
                 closeBlackModal={closeBlackModal}
+                changeCurrentDate={changeCurrentDate}
             />
          ))
     }

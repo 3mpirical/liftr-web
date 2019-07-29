@@ -145,6 +145,7 @@ const ExerciseTracker = ({  }) => {
                         deleteRepScheme={deleteRepScheme}
                         updateComment={updateComment}
                         currentDate={currentDate}
+                        changeCurrentDate={changeCurrentDate}
                         /> 
                 }
             </div>

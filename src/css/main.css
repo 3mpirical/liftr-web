@@ -555,11 +555,12 @@ a {
       font-family: "Jura";
       font-size: 3rem;
       color: #5161ca; }
-    .exercise-history__rep-scheme-heading p {
-      padding: 0.5rem 1rem;
+    .exercise-history__rep-scheme-heading button {
       background-color: #455A64;
       border-radius: 2.5px;
       font-size: 2rem; }
+      .exercise-history__rep-scheme-heading button:hover {
+        background-color: #5a7582; }
   .exercise-history__table {
     border-collapse: collapse;
     width: 100%; }
