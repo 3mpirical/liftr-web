@@ -462,14 +462,14 @@ a {
         background-color: transparent; }
     .rep-scheme__work-set:hover > svg {
       opacity: 1; }
-  .rep-scheme__weight, .rep-scheme__reps, .rep-scheme__rpe {
+  .rep-scheme__weight, .rep-scheme__reps, .rep-scheme__rpe, .rep-scheme__distance, .rep-scheme__time {
     max-width: 10rem;
     min-width: 5rem;
     padding: 0;
     border: none;
     font-size: inherit;
     text-align: center; }
-    .rep-scheme__weight:focus, .rep-scheme__reps:focus, .rep-scheme__rpe:focus {
+    .rep-scheme__weight:focus, .rep-scheme__reps:focus, .rep-scheme__rpe:focus, .rep-scheme__distance:focus, .rep-scheme__time:focus {
       background-color: transparent; }
   .rep-scheme__rpe {
     width: 1rem;
@@ -482,6 +482,24 @@ a {
     .rep-scheme__rpe::placeholder {
       color: #00b2c2;
       text-align: center; }
+  .rep-scheme__distance {
+    max-width: 6rem;
+    text-align: right; }
+  .rep-scheme__time {
+    min-width: 3rem;
+    max-width: 3rem; }
+  .rep-scheme__distance-unit {
+    width: 7rem;
+    background-color: transparent;
+    border: none;
+    color: #00b2c2;
+    font-size: inherit;
+    cursor: pointer; }
+  .rep-scheme__distance-input-container, .rep-scheme__time-input-container {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
   .rep-scheme__add-set {
     width: 100%;
     padding: 1rem 0 1rem 3.5rem;
