@@ -522,7 +522,6 @@ a {
   align-items: center;
   width: 90rem;
   padding: 3rem;
-  margin-bottom: 10rem;
   background-color: #11171a;
   border-radius: 2.5px; }
   .exercise-history__title {
@@ -541,20 +540,17 @@ a {
     cursor: pointer; }
   .exercise-history__rep-scheme {
     width: 100%;
-    margin: 2rem 0;
-    padding: 1rem;
+    margin: 3rem 0;
+    padding: 2rem 1rem 3rem 1rem;
     border-bottom: 2px solid #303F9F;
-    border-top: 2px solid #303F9F;
     border-radius: 2.5px;
     background-color: #263238; }
-  .exercise-history__table {
-    width: 100%; }
   .exercise-history__rep-scheme-heading {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem; }
+    margin-bottom: 2rem; }
     .exercise-history__rep-scheme-heading h3 {
       font-family: "Jura";
       font-size: 3rem;
@@ -564,32 +560,22 @@ a {
       background-color: #455A64;
       border-radius: 2.5px;
       font-size: 2rem; }
+  .exercise-history__table {
+    border-collapse: collapse;
+    width: 100%; }
   .exercise-history__labels {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1rem 0;
-    border-radius: 2.5px;
+    height: 5rem;
     background-color: #303F9F;
     font-size: 2.25rem; }
-    .exercise-history__labels td {
-      text-align: center; }
     .exercise-history__labels--rpe {
       color: #00b2c2; }
   .exercise-history__workset {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 1px solid #455A64;
-    padding: 1rem 0;
-    font-size: 2rem; }
-    .exercise-history__workset__rpe {
+    height: 4rem;
+    border-bottom: 1px solid rgba(150, 150, 150, 0.2);
+    font-size: 2rem;
+    text-align: center; }
+    .exercise-history__workset__green {
       color: #00b2c2; }
-    .exercise-history__workset__times {
-      position: absolute;
-      transform: translateX(-50%);
-      left: calc(100% / 3); }
 
 .auth-form {
   display: flex;
@@ -643,7 +629,7 @@ a {
     align-items: flex-start;
     height: 100%;
     width: 100%;
-    padding-top: 10rem;
+    padding: 10rem 0;
     overflow: auto; }
   .modal__default-prompt {
     position: relative;

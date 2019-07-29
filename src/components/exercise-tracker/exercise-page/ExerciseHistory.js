@@ -16,36 +16,81 @@ const ExerciseHistory = ({ exercise_id, closeBlackModal }) => {
         .catch(console.log);
     },[]);
 
-    const renderWorkSets = (workSets) => (
-        workSets.map(({weight, reps, rpe, id}) => (
-            <tr className="exercise-history__workset" key={id} >
-                <td>{ weight ? weight : "-" }</td>
-                <td className="exercise-history__workset__times" >X</td>
-                <td>{ reps ? reps : "-" }</td>
-                <td className="exercise-history__workset__rpe" >{ rpe ? rpe : "-" }</td>
-            </tr>
-        ))
-    );
+    const format = {
+        weight: ["weight", "reps", "rpe"],
+        distance: ["distance", "hours", "minutes", "seconds"]
+    }
+
+    const renderWorkSets = (workSets) => {
+        const kind = repSchemes[0].exercise_kind;
+
+        const mapTd = (data) => {
+            return format[kind].map((value, index) => {
+                if(value === "weight") return(
+                        <td colSpan="1">{ data[value] ? data[value] : "--" }</td>
+                )
+                else if(value === "rpe") return (
+                    <td 
+                        colSpan="1"
+                        className="exercise-history__workset__green">
+                        { data[value] ? data[value] : "--" }
+                    </td>
+                ) 
+                else if(value === "distance") return (
+                    <td colSpan="1">
+                        { data[value] && data.distance_unit 
+                        ? data[value] + data.distance_unit 
+                        : "--" }
+                    </td>
+                )
+                else return <td colSpan="1">{ data[value] ? data[value] : "--" }</td>
+            });
+        }
+
+        return workSets.map((data) => (
+                <tr className="exercise-history__workset" key={data.id} >
+                    { mapTd(data) }
+                </tr>
+        )) 
+    };
 
     const renderRepSchemes = () => {
-        return repSchemes.map((repScheme) => (
-            <div className="exercise-history__rep-scheme" key={repScheme.id}>
-                <div className="exercise-history__rep-scheme-heading">
-                    <h3>{ repScheme.exercise_name }</h3>
-                    <p>{ repScheme.date }</p>
+        let kind = null;
+
+        const mapTh = () => {
+            return format[kind].map((value) => {
+                if(value === "rpe") return (
+                    <th 
+                        colSpan="1"
+                        className="exercise-history__labels--rpe">
+                        { value }
+                    </th>
+                )
+                else if(value === "distance") return <th colSpan="1">length</th>
+                else if(value === "minutes") return <th colSpan="1">mins</th>
+                else if(value === "seconds") return <th colSpan="1">secs</th>
+                else return <th colSpan="1">{ value }</th>
+            })
+        }
+        return repSchemes.map((repScheme) => {
+            kind = repScheme.exercise_kind;
+            return (
+                <div className="exercise-history__rep-scheme" key={repScheme.id}>
+                    <div className="exercise-history__rep-scheme-heading">
+                        <h3>{ repScheme.exercise_name }</h3>
+                        <p>{ repScheme.date }</p>
+                    </div>
+                    <table className="exercise-history__table">
+                        <tbody>
+                            <tr className="exercise-history__labels">
+                                { mapTh() }
+                            </tr>
+                            { renderWorkSets(repScheme.work_sets) }
+                        </tbody>
+                    </table>
                 </div>
-                <table className="exercise-history__table">
-                    <tbody>
-                        <tr className="exercise-history__labels">
-                            <th>weight</th>
-                            <th>reps</th>
-                            <th className="exercise-history__labels--rpe" >RPE</th>
-                        </tr>
-                        { renderWorkSets(repScheme.work_sets) }
-                    </tbody>
-                </table>
-            </div>
-        ))
+            );
+        });
     }
 
     return (
