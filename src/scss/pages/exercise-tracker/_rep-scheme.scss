@@ -127,7 +127,8 @@
     }
 
     &__distance {
-        max-width: 6rem;
+        min-width: 4rem;
+        max-width: 4rem;
         text-align: right;
     }
 

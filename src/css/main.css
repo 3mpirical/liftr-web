@@ -483,7 +483,8 @@ a {
       color: #00b2c2;
       text-align: center; }
   .rep-scheme__distance {
-    max-width: 6rem;
+    min-width: 4rem;
+    max-width: 4rem;
     text-align: right; }
   .rep-scheme__time {
     min-width: 3rem;
